@@ -1,0 +1,40 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}{{ product.name }} | Ecoparrot PriPac{% endblock %}
+
+{% block content %}
+
+<section class="product-detail">
+    <div class="container product-detail-grid">
+
+        <div class="product-detail-image reveal-left">
+        {% if product.image %}
+    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+{% else %}
+    <img src="{% static 'images/products/demo.jpg' %}" alt="{{ product.name }}">
+{% endif %}
+        </div>
+
+        <div class="product-detail-content reveal-right">
+            <span class="badge">Ecoparrot Product</span>
+            <h1>{{ product.name }}</h1>
+            <p class="product-detail-desc">{{ product.description }}</p>
+
+            <ul class="product-detail-features">
+                <li><span class="check">✔</span> Fully customizable branding &amp; sizing</li>
+                <li><span class="check">✔</span> Premium imported raw materials</li>
+                <li><span class="check">✔</span> High bursting strength &amp; durability</li>
+                <li><span class="check">✔</span> Eco-friendly, plastic-free manufacturing</li>
+            </ul>
+
+            <div class="hero-buttons">
+                <a href="{% url 'quotes:view' %}" class="btn btn-primary">Request a Quote</a>
+                <a href="{% url 'products:list' %}" class="btn btn-outline">Back to Products</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

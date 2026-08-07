@@ -1,0 +1,43 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}Our Products | Ecoparrot PriPac{% endblock %}
+
+{% block content %}
+
+{% with page_title="Our Products" page_subtitle="Premium paper and non-woven bags, customized with your branding." page_eyebrow="Products" %}
+    {% include 'website/partials/page-header.html' %}
+{% endwith %}
+
+<section class="products products-page">
+    <div class="container">
+        <div class="grid grid-4 products-grid">
+            {% for product in products %}
+            <div class="product-card reveal-up">
+                <div class="product-image">
+                    {% if product.image %}
+    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+{% else %}
+    <img src="{% static 'images/products/demo.jpg' %}" alt="{{ product.name }}">
+{% endif %}
+                </div>
+                <div class="product-content">
+                    <h3>{{ product.name }}</h3>
+                    <p>{{ product.short_description }}</p>
+                    <a href="{% url 'products:detail' product.slug %}" class="product-link">View Details &rarr;</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="cta-banner">
+    <div class="container cta-banner-inner">
+        <h2>Need a Custom Packaging Solution?</h2>
+        <p>Tell us your requirements and we'll get you a quote within 24 hours.</p>
+        <a href="{% url 'quotes:view' %}" class="btn btn-primary">Request a Quote</a>
+    </div>
+</section>
+
+{% endblock %}

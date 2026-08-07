@@ -1,0 +1,191 @@
+/* ==========================================
+   PREMIUM NAVBAR
+========================================== */
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    padding: 18px 0;
+
+    transition: all .4s ease;
+}
+
+/* Scroll Effect */
+.navbar.scrolled{
+    background: rgba(255,255,255,.15);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: 0 8px 30px rgba(0,0,0,.08);
+
+    padding: 12px 0;
+}
+
+.nav-container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo img{
+
+    height:60px;
+
+    transition:.4s;
+
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:40px;
+
+}
+
+.nav-links li{
+
+    list-style:none;
+
+}
+
+.nav-links a{
+
+    position:relative;
+
+    color:white;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+/* Scroll Text Color */
+
+.navbar.scrolled .nav-links a{
+
+    color:var(--text-dark);
+
+}
+
+/* Underline */
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--secondary);
+
+    transition:.4s;
+
+}
+
+.nav-links a:hover::after,
+
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
+/* Hover */
+
+.nav-links a:hover{
+
+    color:var(--secondary);
+
+}
+
+/* ===========================
+   RIGHT SIDE
+=========================== */
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.nav-right .btn{
+
+    padding:12px 28px;
+
+    font-size:15px;
+
+}
+
+/* ===========================
+   HAMBURGER
+=========================== */
+
+.hamburger{
+
+    display:none;
+
+    cursor:pointer;
+
+}
+
+.hamburger span{
+
+    display:block;
+
+    width:28px;
+
+    height:3px;
+
+    margin:6px;
+
+    background:white;
+
+    border-radius:20px;
+
+    transition:.4s;
+
+}
+
+/* Scroll Color */
+
+.navbar.scrolled .hamburger span{
+
+    background:var(--text-dark);
+
+}

@@ -1,0 +1,56 @@
+<section class="contact" id="contact">
+    <div class="container">
+
+        <div class="section-header">
+            <span class="section-subtitle">Get In Touch</span>
+            <h2 class="section-title">Let's Build a Greener Future Together</h2>
+            <p class="section-description">
+                Partner with Ecoparrot PriPac for innovative, sustainable, and high-quality
+                packaging solutions that elevate your brand while protecting the environment.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-info reveal-left">
+                <div class="contact-info-item glass">
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        <h4>Visit Us</h4>
+                        <p>Ecoparrot PriPac Pvt Ltd, Peringala, Kochi, Kerala, India</p>
+                    </div>
+                </div>
+                <div class="contact-info-item glass">
+                    <span class="contact-icon">📞</span>
+                    <div>
+                        <h4>Call Us</h4>
+                        <p>+91 99460 18888 &nbsp;|&nbsp; +91 99475 57888<br>+91 99474 47888 &nbsp;|&nbsp; +91 75938 53880</p>
+                    </div>
+                </div>
+                <div class="contact-info-item glass">
+                    <span class="contact-icon">✉️</span>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p>info@ecoparrotpripac.in</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form glass reveal-right" method="post" action="{% url 'contact:view' %}">
+                {% csrf_token %}
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-row">
+                    <input type="tel" name="phone" placeholder="Phone Number">
+                    <input type="text" name="subject" placeholder="Subject">
+                </div>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+
+        </div>
+
+    </div>
+</section>

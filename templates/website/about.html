@@ -1,0 +1,33 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}About Us | Ecoparrot PriPac{% endblock %}
+
+{% block content %}
+
+{% with page_title="About Ecoparrot PriPac" page_subtitle="Kerala's pioneering fully automated eco-friendly packaging manufacturer." page_eyebrow="About Us" %}
+    {% include 'website/partials/page-header.html' %}
+{% endwith %}
+
+{% include 'website/partials/about-section.html' %}
+
+{% include 'website/partials/why-choose-section.html' %}
+
+<section class="strengths-standalone">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-subtitle">Our Strengths</span>
+            <h2 class="section-title">What Sets Us Apart</h2>
+        </div>
+        <div class="grid grid-3 strengths-grid">
+            {% for strength in strengths %}
+            <div class="card reveal-up strength-card">
+                <span class="check">✔</span>
+                <p>{{ strength }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

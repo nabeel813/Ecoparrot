@@ -1,0 +1,13 @@
+{% load static %}
+
+<section class="page-header">
+    <div class="page-header-bg">
+        <img src="{% static 'images/backgrounds/hero-bg.jpg' %}" alt="">
+        <div class="page-header-overlay"></div>
+    </div>
+    <div class="container">
+        <span class="hero-badge">🌿 {{ page_eyebrow|default:"Ecoparrot PriPac" }}</span>
+        <h1>{{ page_title }}</h1>
+        <p>{{ page_subtitle }}</p>
+    </div>
+</section>

@@ -1,0 +1,34 @@
+<section class="why-choose" id="why-choose">
+    <div class="container">
+
+        <div class="section-header">
+            <span class="section-subtitle">Why Ecoparrot</span>
+            <h2 class="section-title">Why Choose Ecoparrot PriPac?</h2>
+            <p class="section-description">
+                From an automated manufacturing floor to premium raw materials, every part of
+                our process is built to deliver packaging your brand can stand behind.
+            </p>
+        </div>
+
+        <div class="grid grid-3 why-choose-grid">
+            {% for item in why_choose %}
+            <div class="card feature-card reveal-up">
+                <span class="feature-number">0{{ forloop.counter }}</span>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats-bar glass reveal-up">
+            {% for stat in stats %}
+            <div class="stat-item">
+                <h3><span class="counter" data-target="{{ stat.value }}">0</span>{{ stat.suffix }}</h3>
+                <p>{{ stat.label }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>

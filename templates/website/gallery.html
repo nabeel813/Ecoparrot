@@ -1,0 +1,34 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}Gallery | Ecoparrot PriPac{% endblock %}
+
+{% block content %}
+
+{% with page_title="Gallery" page_subtitle="A look inside our facility, machinery, and finished packaging." page_eyebrow="Gallery" %}
+    {% include 'website/partials/page-header.html' %}
+{% endwith %}
+
+<section class="gallery gallery-page">
+    <div class="container">
+        <div class="gallery-grid">
+            {% for image in images %}
+            <div class="gallery-item reveal-up">
+                {% if image.image %}
+                <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                {% else %}
+                <img src="{% static 'images/gallery/demo.jpg' %}" alt="{{ image.title }}">
+                {% endif %}
+                <div class="gallery-overlay">
+                    <h4>{{ image.title }}</h4>
+                    <span>{{ image.get_category_display }}</span>
+                </div>
+            </div>
+            {% empty %}
+            <p>Gallery photos will appear here once uploaded from the admin dashboard.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

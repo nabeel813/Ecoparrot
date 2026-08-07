@@ -1,0 +1,29 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Our Clients | Ecoparrot PriPac{% endblock %}
+
+{% block content %}
+
+{% with page_title="Our Clients" page_subtitle="Brands across retail, hospitality, and corporate sectors trust Ecoparrot." page_eyebrow="Clients" %}
+    {% include 'website/partials/page-header.html' %}
+{% endwith %}
+
+<section class="clients clients-page">
+    <div class="container">
+        <div class="grid grid-6 clients-grid-page">
+            {% for client in clients %}
+            <div class="client-card glass reveal-up" title="{{ client.name }}">
+                {% if client.logo %}
+                    <img src="{{ client.logo.url }}" alt="{{ client.name }}">
+                {% else %}
+                    <span>{{ client.name }}</span>
+                {% endif %}
+            </div>
+            {% empty %}
+            <p>No clients added yet. Add clients from the admin dashboard.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

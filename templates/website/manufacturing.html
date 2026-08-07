@@ -1,0 +1,75 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}Manufacturing Facility | Ecoparrot PriPac{% endblock %}
+
+{% block content %}
+
+{% with page_title="Our Manufacturing Facility" page_subtitle="A fully automated production line capable of 300,000 bags a day." page_eyebrow="Manufacturing" %}
+    {% include 'website/partials/page-header.html' %}
+{% endwith %}
+
+<section class="manufacturing manufacturing-page">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-subtitle">Our Capabilities</span>
+            <h2 class="section-title">Manufacturing Capabilities You Can Rely On</h2>
+        </div>
+
+        <div class="grid grid-3 capabilities-grid">
+            {% for capability in capabilities %}
+            <div class="capability-card glass reveal-up">
+                <span class="capability-icon">{{ capability.icon|default:"✔" }}</span>
+                <h4>{{ capability.title }}</h4>
+            </div>
+            {% empty %}
+            <p>Manufacturing capabilities will appear here once added from the admin dashboard.</p>
+            {% endfor %}
+        </div>
+
+        <div class="factory-photos">
+            <div class="section-header">
+                <span class="section-subtitle">Inside The Factory</span>
+                <h2 class="section-title">See Our Facility In Action</h2>
+            </div>
+            <div class="grid grid-3 photo-grid">
+                {% for photo in manufacturing_photos %}
+                <div class="photo-item reveal-up">
+                    {% if photo.image %}
+                    <img src="{{ photo.image.url }}" alt="{{ photo.caption|default:'Ecoparrot manufacturing facility' }}">
+                    {% else %}
+                    <img src="{% static 'images/machines/demo.jpg' %}" alt="Ecoparrot manufacturing facility">
+                    {% endif %}
+                    {% if photo.caption %}<p class="photo-caption">{{ photo.caption }}</p>{% endif %}
+                </div>
+                {% empty %}
+                <p>Factory photos will appear here once uploaded from the admin dashboard.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="manufacturing">
+    <div class="container">
+        <div class="stats-bar glass reveal-up">
+            {% for stat in stats %}
+            <div class="stat-item">
+                <h3><span class="counter" data-target="{{ stat.value }}">0</span>{{ stat.suffix }}</h3>
+                <p>{{ stat.label }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="strengths-box reveal-up">
+            <h3>Our Strengths</h3>
+            <ul class="strengths-list">
+                {% for strength in strengths %}
+                <li><span class="check">✔</span> {{ strength }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

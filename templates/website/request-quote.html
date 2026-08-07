@@ -1,0 +1,46 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Request a Quote | Ecoparrot PriPac{% endblock %}
+
+{% block content %}
+
+{% with page_title="Request a Quote" page_subtitle="Tell us what you need and our team will get back to you within 24 hours." page_eyebrow="Get a Quote" %}
+    {% include 'website/partials/page-header.html' %}
+{% endwith %}
+
+<section class="contact quote-page">
+    <div class="container">
+
+        {% if messages %}
+            {% for message in messages %}
+            <div class="form-alert {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <form class="contact-form glass quote-form reveal-up" method="post">
+            {% csrf_token %}
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Full Name *" required>
+                <input type="text" name="company" placeholder="Company Name">
+            </div>
+            <div class="form-row">
+                <input type="email" name="email" placeholder="Email Address *" required>
+                <input type="tel" name="phone" placeholder="Phone Number *" required>
+            </div>
+            <div class="form-row">
+                <select name="product" required>
+                    <option value="">Select a Product *</option>
+                    {% for value, label in product_choices %}
+                    <option value="{{ value }}">{{ label }}</option>
+                    {% endfor %}
+                </select>
+                <input type="text" name="quantity" placeholder="Estimated Quantity (e.g. 5,000 pcs/month)">
+            </div>
+            <textarea name="details" rows="5" placeholder="Tell us more about your requirement — sizes, branding, timeline..."></textarea>
+            <button type="submit" class="btn btn-primary">Submit Quote Request</button>
+        </form>
+
+    </div>
+</section>
+
+{% endblock %}

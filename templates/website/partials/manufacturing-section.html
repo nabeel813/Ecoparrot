@@ -1,0 +1,50 @@
+{% load static %}
+
+<section class="manufacturing" id="manufacturing">
+    <div class="container">
+
+        <div class="section-header light">
+            <span class="section-subtitle">Manufacturing</span>
+            <h2 class="section-title">A Fully Automated, State-of-the-Art Facility</h2>
+            <p class="section-description">
+                Our advanced machinery lets us manufacture up to 300,000 bags a day —
+                without compromising on precision or quality.
+            </p>
+        </div>
+
+        <div class="grid grid-3 capabilities-grid">
+            {% for capability in capabilities %}
+            <div class="capability-card glass reveal-up">
+                <span class="capability-icon">{{ capability.icon|default:"✔" }}</span>
+                <h4>{{ capability.title }}</h4>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="grid grid-3 photo-grid">
+            {% for photo in manufacturing_photos %}
+            <div class="photo-item reveal-up">
+                {% if photo.image %}
+                <img src="{{ photo.image.url }}" alt="{{ photo.caption|default:'Ecoparrot manufacturing facility' }}">
+                {% else %}
+                <img src="{% static 'images/machines/demo.jpg' %}" alt="Ecoparrot manufacturing facility">
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="strengths-box reveal-up">
+            <h3>Our Strengths</h3>
+            <ul class="strengths-list">
+                {% for strength in strengths %}
+                <li><span class="check">✔</span> {{ strength }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="products-cta">
+            <a href="{% url 'manufacturing' %}" class="btn btn-outline btn-light">See Full Facility</a>
+        </div>
+
+    </div>
+</section>

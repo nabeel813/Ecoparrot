@@ -1,0 +1,98 @@
+/* ==========================================
+   ECOPARROT DESIGN SYSTEM
+   ========================================== */
+
+:root {
+
+    /* ========= Brand Colors ========= */
+
+    --primary: #14532D;
+    --primary-light: #1F7D53;
+    --primary-dark: #0F3D22;
+
+    --secondary: #84CC16;
+
+    --accent: #D4AF37;
+
+    /* ========= Background Colors ========= */
+
+    --bg-main: #F7F9F4;
+    --bg-light: #FFFFFF;
+    --bg-dark: #10241B;
+
+    /* ========= Text Colors ========= */
+
+    --text-dark: #1E1E1E;
+    --text-light: #6B7280;
+    --text-white: #FFFFFF;
+
+    /* ========= Border ========= */
+
+    --border-color: #E5E7EB;
+
+    /* ========= Glass Effect ========= */
+
+    --glass-bg: rgba(255,255,255,.15);
+    --glass-border: rgba(255,255,255,.25);
+    --blur: blur(20px);
+
+    /* ========= Gradients ========= */
+
+    --gradient-primary: linear-gradient(
+        135deg,
+        #14532D,
+        #1F7D53
+    );
+
+    --gradient-hero: linear-gradient(
+        rgba(10,25,15,.55),
+        rgba(10,25,15,.65)
+    );
+
+    /* ========= Typography ========= */
+
+    --heading-font: "Poppins", sans-serif;
+    --body-font: "Inter", sans-serif;
+
+    --fs-h1: 64px;
+    --fs-h2: 48px;
+    --fs-h3: 34px;
+    --fs-h4: 26px;
+    --fs-body: 16px;
+    --fs-small: 14px;
+
+    /* ========= Font Weight ========= */
+
+    --fw-light:300;
+    --fw-regular:400;
+    --fw-medium:500;
+    --fw-semibold:600;
+    --fw-bold:700;
+    --fw-black:800;
+
+    /* ========= Border Radius ========= */
+
+    --radius-sm:10px;
+    --radius-md:16px;
+    --radius-lg:24px;
+    --radius-xl:40px;
+
+    /* ========= Shadows ========= */
+
+    --shadow-sm:0 4px 12px rgba(0,0,0,.08);
+
+    --shadow-md:0 10px 30px rgba(0,0,0,.12);
+
+    --shadow-lg:0 20px 60px rgba(0,0,0,.15);
+
+    /* ========= Spacing ========= */
+
+    --section-padding:100px;
+
+    --container-width:1200px;
+
+    /* ========= Transition ========= */
+
+    --transition:.4s ease;
+
+}

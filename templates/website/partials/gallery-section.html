@@ -1,0 +1,33 @@
+{% load static %}
+
+<section class="gallery" id="gallery">
+    <div class="container">
+
+        <div class="section-header">
+            <span class="section-subtitle">Gallery</span>
+            <h2 class="section-title">Inside Ecoparrot PriPac</h2>
+            <p class="section-description">A glimpse into our facility, machinery, and finished products.</p>
+        </div>
+
+        <div class="gallery-grid">
+            {% for image in images %}
+            <div class="gallery-item reveal-up">
+                {% if image.image %}
+                <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                {% else %}
+                <img src="{% static 'images/gallery/demo.jpg' %}" alt="{{ image.title }}">
+                {% endif %}
+                <div class="gallery-overlay">
+                    <h4>{{ image.title }}</h4>
+                    <span>{{ image.get_category_display }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="products-cta">
+            <a href="{% url 'gallery:list' %}" class="btn btn-primary">View Full Gallery</a>
+        </div>
+
+    </div>
+</section>

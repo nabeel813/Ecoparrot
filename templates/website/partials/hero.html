@@ -1,0 +1,63 @@
+{% load static %}
+
+<section class="hero" id="home">
+
+    <!-- Background -->
+    <div class="hero-background">
+        <img src="{% static 'images/backgrounds/hero-bg.jpg' %}" alt="Ecoparrot Background">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-container">
+
+        <!-- Left Content -->
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                🌿 Sustainable Packaging Solutions
+            </span>
+
+            <h1 class="hero-title">
+                Sustainable Packaging
+                <span>for a Greener Tomorrow</span>
+            </h1>
+
+            <p class="hero-description">
+                Ecoparrot PriPac delivers premium eco-friendly packaging solutions —
+                customized paper bags, non-woven bags, and sustainable packaging products
+                designed for businesses that care about the environment.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="{% url 'products:list' %}" class="btn btn-primary">
+                    Explore Products
+                </a>
+
+                <a href="{% url 'quotes:view' %}" class="btn btn-outline">
+                    Request a Quote
+                </a>
+
+            </div>
+
+            <div class="hero-mini-stats">
+                <div><strong>3 Lakh+</strong><span>Bags per day</span></div>
+                <div><strong>100%</strong><span>Automated plant</span></div>
+                <div><strong>30+</strong><span>Trusted clients</span></div>
+            </div>
+
+        </div>
+
+        <!-- Right Image -->
+        <div class="hero-image">
+            <img src="{% static 'images/hero/hero-product.png' %}" alt="Ecoparrot Products">
+        </div>
+
+    </div>
+
+    <!-- Scroll Down -->
+    <div class="scroll-indicator">
+        <span></span>
+    </div>
+
+</section>

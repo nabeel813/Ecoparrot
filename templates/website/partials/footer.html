@@ -1,0 +1,53 @@
+{% load static %}
+
+<footer class="footer">
+    <div class="container footer-container">
+
+        <div class="footer-col footer-brand">
+            <a href="{% url 'home' %}" class="logo">
+                <img src="{% static 'images/logo/logo2.jpg' %}" alt="Ecoparrot Logo">
+            </a>
+            <p>Ecoparrot PriPac Pvt Ltd is Kerala's pioneering fully automated eco-friendly
+                packaging manufacturer — customized paper bags and non-woven bags for a
+                greener tomorrow.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'products:list' %}">Products</a></li>
+                <li><a href="{% url 'manufacturing' %}">Manufacturing</a></li>
+                <li><a href="{% url 'gallery:list' %}">Gallery</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Our Products</h4>
+            <ul>
+                <li><a href="{% url 'products:detail' 'customized-paper-bags' %}">Customized Paper Bags</a></li>
+                <li><a href="{% url 'products:detail' 'customized-non-woven-bags' %}">Customized Non-Woven Bags</a></li>
+                <li><a href="{% url 'products:detail' 'paper-carry-bags' %}">Paper Carry Bags</a></li>
+                <li><a href="{% url 'products:detail' 'laminated-non-woven-bags' %}">Laminated Non-Woven Bags</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <ul class="footer-contact">
+                <li>📍 Peringala, Kochi, Kerala, India</li>
+                <li>✉️ info@ecoparrotpripac.in</li>
+                <li>📞 +91 99460 18888</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+            <p>&copy; {% now "Y" %} Ecoparrot PriPac Pvt Ltd. All rights reserved.</p>
+            <a href="{% url 'quotes:view' %}" class="btn btn-primary btn-sm">Request a Quote</a>
+        </div>
+    </div>
+</footer>

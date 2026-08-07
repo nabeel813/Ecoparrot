@@ -1,0 +1,41 @@
+{% load static %}
+
+<section class="clients" id="clients">
+    <div class="container">
+
+        <div class="section-header">
+            <span class="section-subtitle">Our Clients</span>
+            <h2 class="section-title">Trusted by Brands Across Industries</h2>
+        </div>
+
+        {% if clients %}
+        <div class="clients-marquee">
+            <div class="clients-track">
+                {% for client in clients %}
+                <div class="client-logo" title="{{ client.name }}">
+                    {% if client.logo %}
+                        <img src="{{ client.logo.url }}" alt="{{ client.name }}">
+                    {% else %}
+                        <span>{{ client.name }}</span>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                {% for client in clients %}
+                <div class="client-logo" aria-hidden="true">
+                    {% if client.logo %}
+                        <img src="{{ client.logo.url }}" alt="">
+                    {% else %}
+                        <span>{{ client.name }}</span>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="products-cta">
+            <a href="{% url 'clients' %}" class="btn btn-outline">View All Clients</a>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,61 @@
+{% load static %}
+
+<nav class="navbar">
+
+    <div class="container nav-container">
+
+        <!-- Logo -->
+        <a href="{% url 'home' %}" class="logo">
+            <img src="{% static 'images/logo/logo.jpeg' %}" alt="Ecoparrot Logo">
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+
+            <li><a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
+
+            <li><a href="{% url 'about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a></li>
+
+            <li><a href="{% url 'products:list' %}" class="{% if 'products' in request.resolver_match.app_name|default:'' %}active{% endif %}">Products</a></li>
+
+            <li><a href="{% url 'manufacturing' %}" class="{% if request.resolver_match.url_name == 'manufacturing' %}active{% endif %}">Manufacturing</a></li>
+
+            <li><a href="{% url 'gallery:list' %}" class="{% if 'gallery' in request.resolver_match.app_name|default:'' %}active{% endif %}">Gallery</a></li>
+
+            <li><a href="{% url 'clients' %}" class="{% if request.resolver_match.url_name == 'clients' %}active{% endif %}">Clients</a></li>
+
+            <li><a href="{% url 'contact:view' %}" class="{% if 'contact' in request.resolver_match.app_name|default:'' %}active{% endif %}">Contact</a></li>
+
+        </ul>
+
+        <!-- Right Side -->
+        <div class="nav-right">
+
+            <a href="{% url 'quotes:view' %}" class="btn btn-primary">
+                Request a Quote
+            </a>
+
+            <!-- Mobile Menu -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Mobile Nav -->
+    <ul class="nav-links-mobile">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'products:list' %}">Products</a></li>
+        <li><a href="{% url 'manufacturing' %}">Manufacturing</a></li>
+        <li><a href="{% url 'gallery:list' %}">Gallery</a></li>
+        <li><a href="{% url 'clients' %}">Clients</a></li>
+        <li><a href="{% url 'contact:view' %}">Contact</a></li>
+        <li><a href="{% url 'quotes:view' %}" class="btn btn-primary">Request a Quote</a></li>
+    </ul>
+
+</nav>
