@@ -1,0 +1,53 @@
+/* ==========================================
+   WHY CHOOSE SECTION
+========================================== */
+.why-choose{
+    background:var(--bg-main);
+}
+.why-choose-grid{
+    margin-bottom:60px;
+}
+.feature-card{
+    text-align:left;
+    position:relative;
+}
+.feature-number{
+    display:inline-block;
+    font-family:var(--heading-font);
+    font-size:32px;
+    font-weight:800;
+    color:var(--secondary);
+    opacity:.5;
+    margin-bottom:10px;
+}
+.feature-card h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+.feature-card p{
+    font-size:15px;
+    margin:0;
+}
+
+/* ==========================================
+   STATS BAR
+========================================== */
+.stats-bar{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    background:var(--gradient-primary);
+    border:none;
+    border-radius:var(--radius-lg);
+    padding:50px 30px;
+    text-align:center;
+}
+.stat-item h3{
+    color:white;
+    font-size:42px;
+    margin-bottom:6px;
+}
+.stat-item p{
+    color:rgba(255,255,255,.8);
+    margin:0;
+    font-size:14px;
+}

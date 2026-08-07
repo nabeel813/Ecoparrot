@@ -1,0 +1,220 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:var(--body-font);
+    font-size:var(--fs-body);
+
+    color:var(--text-dark);
+
+    background:var(--bg-main);
+
+    overflow-x:hidden;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+h1,h2,h3,h4,h5,h6{
+
+    font-family:var(--heading-font);
+
+    font-weight:var(--fw-bold);
+
+    color:var(--text-dark);
+
+}
+
+h1{
+    font-size:var(--fs-h1);
+}
+
+h2{
+    font-size:var(--fs-h2);
+}
+
+h3{
+    font-size:var(--fs-h3);
+}
+
+h4{
+    font-size:var(--fs-h4);
+}
+
+p{
+
+    color:var(--text-light);
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+    width:90%;
+
+    max-width:var(--container-width);
+
+    margin:auto;
+
+}
+
+/* ==========================================
+   SECTION
+========================================== */
+
+section{
+
+    padding:var(--section-padding) 0;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px 36px;
+
+    border-radius:var(--radius-md);
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    cursor:pointer;
+
+    border:none;
+
+}
+
+.btn-primary{
+
+    background:var(--gradient-primary);
+
+    color:white;
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.btn-outline{
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ==========================================
+   GLASS CARD
+========================================== */
+
+.glass{
+
+    background:var(--glass-bg);
+
+    backdrop-filter:var(--blur);
+
+    border:1px solid var(--glass-border);
+
+    border-radius:var(--radius-lg);
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#f2f2f2;
+
+}
+
+/* ==========================================
+   TEXT SELECTION
+========================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
