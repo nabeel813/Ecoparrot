@@ -98,6 +98,13 @@
 }
 .hero-image img{
     filter:drop-shadow(0 30px 60px rgba(0,0,0,.35));
+    border-radius:var(--radius-xl);
+    animation:hero-float 4s ease-in-out infinite;
+}
+
+@keyframes hero-float{
+    0%, 100%{ transform:translateY(0px); }
+    50%{ transform:translateY(-18px); }
 }
 
 /* Scroll Indicator */
