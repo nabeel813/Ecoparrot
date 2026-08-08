@@ -339,95 +339,58 @@ img {
 
     /* -----------------------------------------
        NAVBAR
-       ----------------------------------------- */
+        /* -----------------------------------------
+   NAVBAR
+   ----------------------------------------- */
 
-    .navbar {
-        padding: 10px 0;
-    }
+.navbar {
+    padding: 10px 0;
+    background: var(--bg-dark);
+}
 
-    .navbar.scrolled {
-        padding: 8px 0;
-    }
+.navbar.scrolled {
+    padding: 8px 0;
+}
 
-    .nav-links {
-        display: none;
-    }
+/* Keep desktop navigation visible */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
 
-    .nav-right {
-        gap: 10px;
-    }
+/* Keep Request a Quote visible */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-    .nav-right .btn {
-        display: none;
-    }
+.nav-right .btn {
+    display: inline-flex;
+}
 
-    .logo img {
-        height: 58px;
-        width: auto;
-    }
+/* Keep desktop-style logo */
+.logo img {
+    height: 58px;
+    width: auto;
+}
 
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
-
-    .hamburger span {
-        width: 26px;
-        height: 3px;
-        margin: 5px;
-    }
+/* Hide hamburger */
+.hamburger {
+    display: none;
+}
 
 
-    /* -----------------------------------------
-       MOBILE MENU
-       ----------------------------------------- */
+/* -----------------------------------------
+   MOBILE MENU
+   ----------------------------------------- */
 
-    .nav-links-mobile {
-        display: flex;
+/* We don't need the mobile dropdown menu */
+.nav-links-mobile {
+    display: none !important;
+}       ----------------------------------------- */
 
-        flex-direction: column;
-
-        gap: 0;
-
-        max-height: 0;
-
-        opacity: 0;
-
-        overflow: hidden;
-
-        pointer-events: none;
-
-        background: var(--bg-dark);
-
-        transition:
-            max-height .4s ease,
-            opacity .3s ease;
-    }
-
-    .navbar.menu-open .nav-links-mobile {
-        max-height: 600px;
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    .nav-links-mobile li {
-        border-top: 1px solid rgba(255,255,255,.08);
-    }
-
-    .nav-links-mobile a {
-        display: block;
-
-        padding: 14px 20px;
-
-        color: white;
-
-        font-size: 15px;
-    }
-
-    .nav-links-mobile .btn {
-        margin: 14px 20px;
-    }
-
+    
 
     /* -----------------------------------------
        HERO
