@@ -2,68 +2,173 @@
 
 <section class="hero" id="home">
 
-    <!-- Background -->
+    <!-- =========================
+         HERO BACKGROUND SLIDES
+    ========================== -->
+
     <div class="hero-background">
 
-    <div class="hero-slide active"
-         style="background-image: url('{% static 'images/hero/slide1.jpg' %}');">
-    </div>
+        <!-- Slide 1 -->
+        <div class="hero-slide active"
+             style="background-image:url('{% static "images/hero/slide1.jpg" %}');">
 
-    <div class="hero-slide"
-         style="background-image: url('{% static 'images/hero/slide2.jpg' %}');">
-    </div>
+            <div class="container hero-container">
 
-    <div class="hero-overlay"></div>
+                <div class="hero-content">
 
-</div>
-    <div class="container hero-container">
+                    <span class="hero-badge">
+                        🌿 Sustainable Packaging Solutions
+                    </span>
 
-        <!-- Left Content -->
-        <div class="hero-content">
+                    <h1 class="hero-title">
+                        Sustainable Packaging
+                        <span>for a Greener Tomorrow</span>
+                    </h1>
 
-            <span class="hero-badge">
-                🌿 Sustainable Packaging Solutions
-            </span>
+                    <p class="hero-description">
+                        Premium eco-friendly paper bags and sustainable packaging
+                        solutions designed for businesses that care about quality
+                        and the environment.
+                    </p>
 
-            <h1 class="hero-title">
-                Sustainable Packaging
-                <span>for a Greener Tomorrow</span>
-            </h1>
+                    <div class="hero-buttons">
 
-            <p class="hero-description">
-                Ecoparrot PriPac delivers premium eco-friendly packaging solutions —
-                customized paper bags, non-woven bags, and sustainable packaging products
-                designed for businesses that care about the environment.
-            </p>
+                        <a href="{% url 'products:list' %}" class="btn btn-primary">
+                            Explore Products
+                        </a>
 
-            <div class="hero-buttons">
+                        <a href="{% url 'quotes:view' %}" class="btn btn-outline">
+                            Request Quote
+                        </a>
 
-                <a href="{% url 'products:list' %}" class="btn btn-primary">
-                    Explore Products
-                </a>
+                    </div>
 
-                <a href="{% url 'quotes:view' %}" class="btn btn-outline">
-                    Request a Quote
-                </a>
+                    <div class="hero-mini-stats">
 
-            </div>
+                        <div>
+                            <strong>3 Lakh+</strong>
+                            <span>Bags per day</span>
+                        </div>
 
-            <div class="hero-mini-stats">
-                <div><strong>3 Lakh+</strong><span>Bags per day</span></div>
-                <div><strong>100%</strong><span>Automated plant</span></div>
-                <div><strong>30+</strong><span>Trusted clients</span></div>
+                        <div>
+                            <strong>100%</strong>
+                            <span>Automated Plant</span>
+                        </div>
+
+                        <div>
+                            <strong>30+</strong>
+                            <span>Trusted Clients</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
 
-        <!-- Right Image -->
-        <div class="hero-image">
-            <img src="{% static 'images/hero/ecoparrot-handoff.png' %}" alt="Ecoparrot Products">
+        <!-- Slide 2 -->
+        <div class="hero-slide"
+             style="background-image:url('{% static "images/hero/slide2.jpg" %}');">
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-badge">
+                        🎨 Premium Custom Printing
+                    </span>
+
+                    <h1 class="hero-title">
+                        Your Brand
+                        <span>Our Premium Packaging</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        High-quality customized paper bags with vibrant printing,
+                        durable construction and eco-friendly materials.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="{% url 'products:list' %}" class="btn btn-primary">
+                            View Products
+                        </a>
+
+                        <a href="{% url 'quotes:view' %}" class="btn btn-outline">
+                            Get Quote
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide"
+             style="background-image:url('{% static "images/hero/ecoparrot-handoff.png" %}');">
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-badge">
+                        🏭 Advanced Manufacturing
+                    </span>
+
+                    <h1 class="hero-title">
+                        3 Lakh Bags
+                        <span>Every Single Day</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Kerala's modern automated manufacturing facility delivering
+                        premium packaging solutions with exceptional quality and speed.
+                    </p>
+
+                    <div class="hero-buttons">
+                   <a href="{% url 'manufacturing' %}" class="btn btn-primary">
+    Manufacturing
+</a>
+
+<a href="#" class="btn btn-outline">
+    Contact Us
+</a>
+                        
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-overlay"></div>
 
     </div>
 
-    <!-- Scroll Down -->
+    <!-- Navigation Dots -->
+
+    <div class="hero-dots">
+
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+    </div>
+
+    <!-- Arrows -->
+
+    <button class="hero-prev">&#10094;</button>
+    <button class="hero-next">&#10095;</button>
+
+    <!-- Scroll -->
+
     <div class="scroll-indicator">
         <span></span>
     </div>
