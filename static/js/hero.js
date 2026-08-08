@@ -1,5 +1,72 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+  const heroData = [
+    {
+        badge: "🌿 Sustainable Packaging Solutions",
+        title: "Sustainable Packaging",
+        highlight: "for a Greener Tomorrow",
+        description:
+            "Premium eco-friendly paper bags and sustainable packaging solutions designed for businesses that care about quality and the environment.",
+
+        primaryText: "Explore Products",
+        primaryLink: "/products/",
+
+        secondaryText: "Request Quote",
+        secondaryLink: "/quotes/"
+    },
+
+    {
+        badge: "🎨 Premium Custom Printing",
+        title: "Your Brand",
+        highlight: "Our Premium Packaging",
+        description:
+            "High-quality customized paper bags with vibrant printing, durable construction and eco-friendly materials.",
+
+        primaryText: "View Products",
+        primaryLink: "/products/",
+
+        secondaryText: "Get Quote",
+        secondaryLink: "/quotes/"
+    },
+
+    {
+        badge: "🏭 Advanced Manufacturing",
+        title: "3 Lakh Bags",
+        highlight: "Every Single Day",
+        description:
+            "Kerala's modern automated manufacturing facility delivering premium packaging solutions with exceptional quality and speed.",
+
+        primaryText: "Manufacturing",
+        primaryLink: "/manufacturing/",
+
+        secondaryText: "Request Quote",
+        secondaryLink: "/quotes/"
+    }
+];
+
+function updateHeroContent(index) {
+
+    const data = heroData[index];
+
+    document.getElementById("heroBadge").textContent =
+        data.badge;
+
+    document.getElementById("heroTitle").innerHTML =
+        `${data.title}<span>${data.highlight}</span>`;
+
+    document.getElementById("heroDescription").textContent =
+        data.description;
+
+    const primaryBtn = document.getElementById("heroPrimaryBtn");
+    primaryBtn.textContent = data.primaryText;
+    primaryBtn.href = data.primaryLink;
+
+    const secondaryBtn = document.getElementById("heroSecondaryBtn");
+    secondaryBtn.textContent = data.secondaryText;
+    secondaryBtn.href = data.secondaryLink;
+
+}
+
     // ==========================
     // GSAP ANIMATION
     // ==========================
@@ -61,6 +128,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         current = index;
 
+
+        updateHeroContent(index);
     }
 
     function nextSlide(){
@@ -90,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
         showSlide(prev);
 
     }
+updateHeroContent(0);
 
     setInterval(nextSlide,5000);
 

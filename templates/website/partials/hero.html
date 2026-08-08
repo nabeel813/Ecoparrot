@@ -1,158 +1,94 @@
 {% load static %}
 
-<section class="hero" id="home">
+<section class="hero">
 
     <!-- =========================
-         HERO BACKGROUND SLIDES
+         Background Slides
     ========================== -->
 
     <div class="hero-background">
 
-        <!-- Slide 1 -->
         <div class="hero-slide active"
-             style="background-image:url('{% static "images/hero/slide1.jpg" %}');">
-
-            <div class="container hero-container">
-
-                <div class="hero-content">
-
-                    <span class="hero-badge">
-                        🌿 Sustainable Packaging Solutions
-                    </span>
-
-                    <h1 class="hero-title">
-                        Sustainable Packaging
-                        <span>for a Greener Tomorrow</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        Premium eco-friendly paper bags and sustainable packaging
-                        solutions designed for businesses that care about quality
-                        and the environment.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a href="{% url 'products:list' %}" class="btn btn-primary">
-                            Explore Products
-                        </a>
-
-                        <a href="{% url 'quotes:view' %}" class="btn btn-outline">
-                            Request Quote
-                        </a>
-
-                    </div>
-
-                    <div class="hero-mini-stats">
-
-                        <div>
-                            <strong>3 Lakh+</strong>
-                            <span>Bags per day</span>
-                        </div>
-
-                        <div>
-                            <strong>100%</strong>
-                            <span>Automated Plant</span>
-                        </div>
-
-                        <div>
-                            <strong>30+</strong>
-                            <span>Trusted Clients</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+             style="background-image:url('{% static 'images/hero/slide1.jpg' %}');">
         </div>
 
-        <!-- Slide 2 -->
         <div class="hero-slide"
-             style="background-image:url('{% static "images/hero/slide2.jpg" %}');">
-
-            <div class="container hero-container">
-
-                <div class="hero-content">
-
-                    <span class="hero-badge">
-                        🎨 Premium Custom Printing
-                    </span>
-
-                    <h1 class="hero-title">
-                        Your Brand
-                        <span>Our Premium Packaging</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        High-quality customized paper bags with vibrant printing,
-                        durable construction and eco-friendly materials.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a href="{% url 'products:list' %}" class="btn btn-primary">
-                            View Products
-                        </a>
-
-                        <a href="{% url 'quotes:view' %}" class="btn btn-outline">
-                            Get Quote
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+             style="background-image:url('{% static 'images/hero/slide2.jpg' %}');">
         </div>
 
-        <!-- Slide 3 -->
         <div class="hero-slide"
-             style="background-image:url('{% static "images/hero/ecoparrot-handoff.png" %}');">
-
-            <div class="container hero-container">
-
-                <div class="hero-content">
-
-                    <span class="hero-badge">
-                        🏭 Advanced Manufacturing
-                    </span>
-
-                    <h1 class="hero-title">
-                        3 Lakh Bags
-                        <span>Every Single Day</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        Kerala's modern automated manufacturing facility delivering
-                        premium packaging solutions with exceptional quality and speed.
-                    </p>
-
-                    <div class="hero-buttons">
-                   <a href="{% url 'manufacturing' %}" class="btn btn-primary">
-    Manufacturing
-</a>
-
-<a href="#" class="btn btn-outline">
-    Contact Us
-</a>
-                        
-
-                    </div>
-
-                </div>
-
-            </div>
-
+             style="background-image:url('{% static 'images/hero/ecoparrot-handoff.png' %}');">
         </div>
 
         <div class="hero-overlay"></div>
 
     </div>
 
-    <!-- Navigation Dots -->
+    <!-- =========================
+         Hero Content
+    ========================== -->
+
+    <div class="container hero-container">
+
+        <div class="hero-content">
+
+            <span class="hero-badge" id="heroBadge">
+                🌿 Sustainable Packaging Solutions
+            </span>
+
+            <h1 class="hero-title" id="heroTitle">
+                Sustainable Packaging
+                <span>for a Greener Tomorrow</span>
+            </h1>
+
+            <p class="hero-description" id="heroDescription">
+                Premium eco-friendly paper bags and sustainable packaging
+                solutions designed for businesses that care about quality
+                and the environment.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="{% url 'products:list' %}"
+                   class="btn btn-primary"
+                   id="heroPrimaryBtn">
+                    Explore Products
+                </a>
+
+                <a href="{% url 'quotes:view' %}"
+                   class="btn btn-outline"
+                   id="heroSecondaryBtn">
+                    Request Quote
+                </a>
+
+            </div>
+
+            <div class="hero-mini-stats">
+
+                <div>
+                    <strong>3 Lakh+</strong>
+                    <span>Bags per day</span>
+                </div>
+
+                <div>
+                    <strong>100%</strong>
+                    <span>Automated Plant</span>
+                </div>
+
+                <div>
+                    <strong>30+</strong>
+                    <span>Trusted Clients</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         Navigation Dots
+    ========================== -->
 
     <div class="hero-dots">
 
@@ -162,7 +98,9 @@
 
     </div>
 
-    <!-- Arrows -->
+    <!-- =========================
+         Navigation Arrows
+    ========================== -->
 
     <button class="hero-prev">&#10094;</button>
     <button class="hero-next">&#10095;</button>
