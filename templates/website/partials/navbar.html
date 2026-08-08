@@ -31,19 +31,14 @@
         <!-- Right Side -->
         <div class="nav-right">
 
-            <a href="{% url 'quotes:view' %}" class="btn btn-primary">
-                Request a Quote
-            </a>
+    <!-- Mobile Menu -->
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-            <!-- Mobile Menu -->
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-        </div>
-
+</div>
     </div>
 
     <!-- Mobile Nav -->
@@ -55,7 +50,6 @@
         <li><a href="{% url 'gallery:list' %}">Gallery</a></li>
         <li><a href="{% url 'clients' %}">Clients</a></li>
         <li><a href="{% url 'contact:view' %}">Contact</a></li>
-        <li><a href="{% url 'quotes:view' %}" class="btn btn-primary">Request a Quote</a></li>
     </ul>
 
 </nav>
