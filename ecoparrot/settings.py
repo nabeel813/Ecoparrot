@@ -93,7 +93,7 @@ DATABASES = {
         conn_max_age=0
     )
 }
-DATABASES['default']['OPTIONS'] = {'options': '-c search_path=public'}
+
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
 
