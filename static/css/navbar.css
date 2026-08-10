@@ -1,191 +1,480 @@
 /* ==========================================
-   PREMIUM NAVBAR
+   ECOPARROT — CINEMATIC NAVBAR
 ========================================== */
 
-.navbar{
+.navbar {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
+
     z-index: 1000;
 
     padding: 18px 0;
 
-    transition: all .4s ease;
+    background: transparent;
+
+    border-bottom: 1px solid transparent;
+
+    transition:
+        background .45s ease,
+        backdrop-filter .45s ease,
+        border-color .45s ease,
+        padding .45s ease;
 }
 
-/* Scroll Effect */
-.navbar.scrolled{
-    background: rgba(255,255,255,.15);
+
+/* ==========================================
+   SCROLL EFFECT
+========================================== */
+
+.navbar.scrolled {
+
+    padding: 11px 0;
+
+    background: rgba(5, 7, 6, .82);
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
-    box-shadow: 0 8px 30px rgba(0,0,0,.08);
+    border-bottom:
+        1px solid rgba(255, 255, 255, .08);
 
-    padding: 12px 0;
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, .18);
 }
 
-.nav-container{
 
-    display:flex;
+/* ==========================================
+   CONTAINER
+========================================== */
 
-    align-items:center;
+.nav-container {
 
-    justify-content:space-between;
+    display: flex;
 
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 35px;
 }
 
-/* ===========================
+
+/* ==========================================
    LOGO
-=========================== */
+========================================== */
 
-.logo img{
+.logo {
 
-    height:80px;
+    display: flex;
 
-    transition:.4s;
+    align-items: center;
 
+    flex-shrink: 0;
 }
 
-/* ===========================
-   MENU
-=========================== */
+.logo img {
 
-.nav-links{
+    width: auto;
 
-    display:flex;
+    height: 58px;
 
-    align-items:center;
+    object-fit: contain;
 
-    gap:40px;
-
+    transition:
+        height .45s ease,
+        transform .45s ease;
 }
 
-.nav-links li{
+.navbar.scrolled .logo img {
 
-    list-style:none;
-
+    height: 48px;
 }
 
-.nav-links a{
 
-    position:relative;
+/* ==========================================
+   DESKTOP MENU
+========================================== */
 
-    color:white;
+.nav-links {
 
-    font-weight:500;
+    display: flex;
 
-    transition:.3s;
+    align-items: center;
 
+    gap: 30px;
+
+    margin-left: auto;
 }
 
-/* Scroll Text Color */
+.nav-links li {
 
-.navbar.scrolled .nav-links a{
-
-    color:var(--text-dark);
-
+    list-style: none;
 }
 
-/* Underline */
+.nav-links a {
 
-.nav-links a::after{
+    position: relative;
 
-    content:"";
+    display: inline-block;
 
-    position:absolute;
+    padding: 8px 0;
 
-    left:0;
+    color:
+        rgba(255, 255, 255, .72);
 
-    bottom:-8px;
+    font-size: 13px;
 
-    width:0;
+    font-weight: 500;
 
-    height:2px;
+    letter-spacing: .01em;
 
-    background:var(--secondary);
+    transition:
+        color .3s ease;
+}
 
-    transition:.4s;
 
+/* ==========================================
+   ACTIVE / HOVER LINE
+========================================== */
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    transition:
+        width .4s cubic-bezier(
+            .22,
+            1,
+            .36,
+            1
+        );
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+
+    color: var(--primary-light);
 }
 
 .nav-links a:hover::after,
+.nav-links a.active::after {
 
-.nav-links a.active::after{
-
-    width:100%;
-
+    width: 100%;
 }
 
-/* Hover */
 
-.nav-links a:hover{
-
-    color:var(--secondary);
-
-}
-
-/* ===========================
+/* ==========================================
    RIGHT SIDE
-=========================== */
+========================================== */
 
-.nav-right{
+.nav-right {
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    gap:25px;
-
+    gap: 15px;
 }
 
-/* ===========================
-   BUTTON
-=========================== */
 
-.nav-right .btn{
+/* ==========================================
+   REQUEST QUOTE
+========================================== */
 
-    padding:12px 28px;
+.nav-quote {
 
-    font-size:15px;
+    display: inline-flex;
 
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    border-radius: 10px;
+
+    color: #04120b;
+
+    background: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
 }
 
-/* ===========================
+.nav-quote:hover {
+
+    color: #04120b;
+
+    background: var(--primary-light);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 30px rgba(
+            24,
+            200,
+            120,
+            .25
+        );
+}
+
+
+/* ==========================================
    HAMBURGER
-=========================== */
+========================================== */
 
-.hamburger{
+.hamburger {
 
-    display:none;
+    display: none;
 
-    cursor:pointer;
+    width: 42px;
 
+    height: 42px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
 }
 
-.hamburger span{
+.hamburger span {
 
-    display:block;
+    display: block;
 
-    width:28px;
+    width: 23px;
 
-    height:3px;
+    height: 2px;
 
-    margin:6px;
+    margin: 0;
 
-    background:white;
+    background: white;
 
-    border-radius:20px;
+    border-radius: 20px;
 
-    transition:.4s;
-
+    transition:
+        transform .35s ease,
+        opacity .35s ease,
+        background .35s ease;
 }
 
-/* Scroll Color */
 
-.navbar.scrolled .hamburger span{
+/* ==========================================
+   HAMBURGER OPEN STATE
+========================================== */
 
-    background:var(--text-dark);
+.navbar.menu-open .hamburger span:nth-child(1) {
 
+    transform:
+        translateY(7px)
+        rotate(45deg);
+}
+
+.navbar.menu-open .hamburger span:nth-child(2) {
+
+    opacity: 0;
+}
+
+.navbar.menu-open .hamburger span:nth-child(3) {
+
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
+}
+
+
+/* ==========================================
+   MOBILE NAVIGATION
+========================================== */
+
+.nav-links-mobile {
+
+    display: none;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 20px 32px 30px;
+
+    background:
+        rgba(5, 7, 6, .97);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    border-top:
+        1px solid rgba(
+            255,
+            255,
+            255,
+            .06
+        );
+}
+
+.nav-links-mobile li {
+
+    border-bottom:
+        1px solid rgba(
+            255,
+            255,
+            255,
+            .07
+        );
+}
+
+.nav-links-mobile a {
+
+    display: block;
+
+    padding: 15px 0;
+
+    color:
+        rgba(255, 255, 255, .78);
+
+    font-size: 16px;
+
+    transition:
+        color .3s ease;
+}
+
+.nav-links-mobile a:hover {
+
+    color: var(--primary);
+}
+
+.nav-links-mobile .mobile-quote {
+
+    margin-top: 18px;
+
+    padding: 14px 18px;
+
+    text-align: center;
+
+    color: #04120b;
+
+    background: var(--primary);
+
+    border: none;
+
+    border-radius: 10px;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+
+        gap: 20px;
+    }
+
+    .nav-links a {
+
+        font-size: 12px;
+    }
+
+    .nav-quote {
+
+        padding: 0 14px;
+
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .nav-links {
+
+        display: none;
+    }
+
+    .nav-right .nav-quote {
+
+        display: none;
+    }
+
+    .hamburger {
+
+        display: flex;
+    }
+
+    .navbar.menu-open .nav-links-mobile {
+
+        display: block;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .navbar {
+
+        padding: 14px 0;
+    }
+
+    .navbar.scrolled {
+
+        padding: 10px 0;
+    }
+
+    .logo img {
+
+        height: 46px;
+    }
+
+    .navbar.scrolled .logo img {
+
+        height: 42px;
+    }
+
+    .nav-links-mobile {
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+    }
 }
