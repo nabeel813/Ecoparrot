@@ -34,7 +34,7 @@ background: var(--primary-dark);
 
     padding: 11px 0;
 
-    background: rgba(5, 7, 6, .82);
+   background: var(--primary-dark);
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
