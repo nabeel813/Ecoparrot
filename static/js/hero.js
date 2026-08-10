@@ -525,8 +525,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* ==========================================
-   HERO → ABOUT CINEMATIC TRANSITION
-========================================== */
+/* =========================================================
+   ECOPARROT — CINEMATIC HERO SCROLL EXPERIENCE
+   ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -534,109 +535,457 @@ document.addEventListener("DOMContentLoaded", function () {
         typeof gsap === "undefined" ||
         typeof ScrollTrigger === "undefined"
     ) {
+        console.warn(
+            "GSAP or ScrollTrigger is not available."
+        );
         return;
     }
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const hero = document.querySelector(".hero");
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const hero =
+        document.querySelector(".hero");
 
     if (!hero) {
         return;
     }
 
 
-    /* ------------------------------------------
-       Find the first section after Hero
-    ------------------------------------------ */
+    const background =
+        hero.querySelector(".hero-background");
 
-    const aboutSection = hero.nextElementSibling;
+    const slides =
+        hero.querySelectorAll(".hero-slide");
 
-    if (!aboutSection) {
-        return;
-    }
+    const overlay =
+        hero.querySelector(".hero-overlay");
+
+    const content =
+        hero.querySelector(".hero-content");
+
+    const badge =
+        hero.querySelector(".hero-badge");
+
+    const title =
+        hero.querySelector(".hero-title");
+
+    const description =
+        hero.querySelector(".hero-description");
+
+    const buttons =
+        hero.querySelector(".hero-buttons");
+
+    const stats =
+        hero.querySelector(".hero-mini-stats");
+
+    const dots =
+        hero.querySelector(".hero-dots");
+
+    const arrows =
+        hero.querySelectorAll(
+            ".hero-prev, .hero-next"
+        );
+
+    const scrollIndicator =
+        hero.querySelector(
+            ".scroll-indicator"
+        );
 
 
-    /* ------------------------------------------
-       Initial state
-    ------------------------------------------ */
+    /* =====================================================
+       DESKTOP CINEMATIC SCROLL
+    ===================================================== */
 
-    gsap.set(aboutSection, {
-        y: 80,
-        opacity: 0
-    });
+    const mm = gsap.matchMedia();
 
 
-    /* ------------------------------------------
-       Hero → About transition
-    ------------------------------------------ */
+    mm.add(
+        "(min-width: 769px)",
+        function () {
 
-    const transitionTimeline = gsap.timeline({
+            /*
+             * IMPORTANT:
+             *
+             * The Hero stays visually present
+             * while the individual elements
+             * transform according to scroll.
+             */
 
-        scrollTrigger: {
+            const timeline =
+                gsap.timeline({
 
-            trigger: hero,
+                    scrollTrigger: {
 
-            start: "70% top",
+                        trigger: hero,
 
-            end: "bottom top",
+                        start: "top top",
 
-            scrub: 1.4,
+                        end: "+=1200",
 
-            invalidateOnRefresh: true
+                        scrub: 1.2,
+
+                        pin: true,
+
+                        anticipatePin: 1,
+
+                        invalidateOnRefresh: true
+
+                    }
+
+                });
+
+
+            /* =================================================
+               PHASE 1
+               Background starts moving immediately
+            ================================================= */
+
+            timeline.to(
+                slides,
+                {
+                    scale: 1.12,
+
+                    yPercent: -5,
+
+                    ease: "none",
+
+                    duration: 1
+                },
+                0
+            );
+
+
+            /* =================================================
+               PHASE 2
+               Background gets slightly deeper
+            ================================================= */
+
+            timeline.to(
+                background,
+                {
+                    scale: 1.04,
+
+                    ease: "none",
+
+                    duration: 1
+                },
+                0
+            );
+
+
+            /* =================================================
+               PHASE 3
+               Badge moves first
+            ================================================= */
+
+            timeline.to(
+                badge,
+                {
+                    y: -70,
+
+                    opacity: 0,
+
+                    ease: "power2.inOut",
+
+                    duration: 0.35
+                },
+                0.05
+            );
+
+
+            /* =================================================
+               PHASE 4
+               TITLE becomes the main visual
+            ================================================= */
+
+            timeline.to(
+                title,
+                {
+                    y: -150,
+
+                    scale: 1.05,
+
+                    letterSpacing: "-0.02em",
+
+                    ease: "power2.inOut",
+
+                    duration: 0.55
+                },
+                0.10
+            );
+
+
+            /* =================================================
+               PHASE 5
+               Description follows title
+            ================================================= */
+
+            timeline.to(
+                description,
+                {
+                    y: -100,
+
+                    opacity: 0,
+
+                    ease: "power2.inOut",
+
+                    duration: 0.4
+                },
+                0.25
+            );
+
+
+            /* =================================================
+               PHASE 6
+               Buttons move away later
+            ================================================= */
+
+            timeline.to(
+                buttons,
+                {
+                    y: -70,
+
+                    opacity: 0,
+
+                    scale: 0.94,
+
+                    ease: "power2.inOut",
+
+                    duration: 0.35
+                },
+                0.34
+            );
+
+
+            /* =================================================
+               PHASE 7
+               Stats move with a different speed
+            ================================================= */
+
+            timeline.to(
+                stats,
+                {
+                    y: -45,
+
+                    opacity: 0,
+
+                    ease: "power2.inOut",
+
+                    duration: 0.35
+                },
+                0.42
+            );
+
+
+            /* =================================================
+               PHASE 8
+               Content itself starts floating away
+            ================================================= */
+
+            timeline.to(
+                content,
+                {
+                    y: -90,
+
+                    ease: "none",
+
+                    duration: 0.55
+                },
+                0.35
+            );
+
+
+            /* =================================================
+               PHASE 9
+               Overlay changes subtly
+            ================================================= */
+
+            timeline.to(
+                overlay,
+                {
+                    opacity: 0.55,
+
+                    ease: "none",
+
+                    duration: 0.45
+                },
+                0.42
+            );
+
+
+            /* =================================================
+               PHASE 10
+               Navigation UI disappears
+            ================================================= */
+
+            timeline.to(
+                dots,
+                {
+                    opacity: 0,
+
+                    y: 25,
+
+                    ease: "power2.inOut",
+
+                    duration: 0.25
+                },
+                0.48
+            );
+
+
+            timeline.to(
+                arrows,
+                {
+                    opacity: 0,
+
+                    scale: 0.8,
+
+                    ease: "power2.inOut",
+
+                    duration: 0.25
+                },
+                0.48
+            );
+
+
+            timeline.to(
+                scrollIndicator,
+                {
+                    opacity: 0,
+
+                    y: 30,
+
+                    ease: "power2.inOut",
+
+                    duration: 0.25
+                },
+                0.5
+            );
+
+
+            /* =================================================
+               PHASE 11
+               Final cinematic zoom
+            ================================================= */
+
+            timeline.to(
+                slides,
+                {
+                    scale: 1.20,
+
+                    yPercent: -9,
+
+                    ease: "power1.inOut",
+
+                    duration: 0.5
+                },
+                0.55
+            );
+
+
+            /* =================================================
+               Refresh after everything is ready
+            ================================================= */
+
+            ScrollTrigger.refresh();
+
+
+            /*
+             * Cleanup when media query changes.
+             */
+
+            return function () {
+
+                ScrollTrigger.getAll()
+                    .forEach(function (trigger) {
+
+                        trigger.kill();
+
+                    });
+
+            };
 
         }
-
-    });
-
-
-    /* ------------------------------------------
-       Hero fades into the next section
-    ------------------------------------------ */
-
-    transitionTimeline.to(
-        hero,
-        {
-            opacity: 0.65,
-            scale: 0.97,
-            ease: "none"
-        },
-        0
     );
 
 
-    /* ------------------------------------------
-       About rises into view
-    ------------------------------------------ */
+    /* =====================================================
+       MOBILE
+       Don't pin the Hero on mobile.
+    ===================================================== */
 
-    transitionTimeline.to(
-        aboutSection,
-        {
-            y: 0,
-            opacity: 1,
-            ease: "none"
-        },
-        0.15
+    mm.add(
+        "(max-width: 768px)",
+        function () {
+
+            const mobileTimeline =
+                gsap.timeline({
+
+                    scrollTrigger: {
+
+                        trigger: hero,
+
+                        start: "top top",
+
+                        end: "bottom top",
+
+                        scrub: 1,
+
+                        invalidateOnRefresh: true
+
+                    }
+
+                });
+
+
+            mobileTimeline.to(
+                slides,
+                {
+                    scale: 1.08,
+
+                    yPercent: -3,
+
+                    ease: "none"
+
+                },
+                0
+            );
+
+
+            mobileTimeline.to(
+                content,
+                {
+                    y: -80,
+
+                    opacity: 0.35,
+
+                    ease: "none"
+
+                },
+                0
+            );
+
+
+            mobileTimeline.to(
+                scrollIndicator,
+                {
+                    opacity: 0,
+
+                    ease: "none"
+
+                },
+                0
+            );
+
+
+            ScrollTrigger.refresh();
+
+        }
     );
-
-
-    /* ------------------------------------------
-       About gets a subtle scale-up
-    ------------------------------------------ */
-
-    transitionTimeline.fromTo(
-        aboutSection,
-        {
-            scale: 0.985
-        },
-        {
-            scale: 1,
-            ease: "none"
-        },
-        0
-    );
-
-
-    ScrollTrigger.refresh();
 
 });
