@@ -51,4 +51,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     hero.classList.add("hero-loaded");
+
+    /* ==========================
+   HERO MOUSE PARALLAX
+========================== */
+
+const heroImage = hero.querySelector(".hero-image");
+
+if (heroImage) {
+
+    hero.addEventListener("mousemove", function (e) {
+
+        const rect = hero.getBoundingClientRect();
+
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        heroImage.style.transform =
+            `translate(${x * 12}px, ${y * 12}px)`;
+
+    });
+
+    hero.addEventListener("mouseleave", function () {
+
+        heroImage.style.transform = "translate(0,0)";
+
+    });
+
+}
 });
