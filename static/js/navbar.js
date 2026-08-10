@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbar =
         document.querySelector(".navbar");
 
-    const hamburger =
-        document.querySelector(".hamburger");
+    let lastScrollY = window.scrollY;
 
 
     if (!navbar) {
@@ -18,27 +17,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateNavbar() {
 
-        if (window.scrollY > 50) {
+    const currentScroll = window.scrollY;
 
-            navbar.classList.add("scrolled");
+    if (currentScroll > window.innerHeight * 0.35) {
 
-        } else {
+        navbar.classList.add("scrolled");
 
-            navbar.classList.remove("scrolled");
+    } else {
 
-        }
+        navbar.classList.remove("scrolled");
 
     }
 
-    updateNavbar();
+    if (
+        currentScroll > lastScrollY &&
+        currentScroll > 150 &&
+        !navbar.classList.contains("menu-open")
+    ) {
 
-    window.addEventListener(
-        "scroll",
-        updateNavbar,
-        { passive: true }
-    );
+        navbar.classList.add("nav-hidden");
 
+    } else {
 
+        navbar.classList.remove("nav-hidden");
+
+    }
+
+    lastScrollY = currentScroll;
+
+}
     /* ==========================================
        MOBILE MENU
     ========================================== */

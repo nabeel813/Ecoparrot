@@ -14,15 +14,23 @@
 
     padding: 18px 0;
 
-background: var(--primary-dark);
+background: transparent;
 
     border-bottom: 1px solid transparent;
 
     transition:
-        background .45s ease,
-        backdrop-filter .45s ease,
-        border-color .45s ease,
-        padding .45s ease;
+            
+    transform .45s ease,
+    background .45s ease,
+    backdrop-filter .45s ease,
+    border-color .45s ease,
+    padding .45s ease;
+        backdrop-filter:blur(0px);
+        transform:translateY(0);
+
+will-change:transform;
+
+-webkit-backdrop-filter:blur(0px);
 }
 
 
@@ -36,17 +44,22 @@ background: var(--primary-dark);
 
    background: var(--primary-dark);
 
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(18px);
 
     border-bottom:
         1px solid rgba(255, 255, 255, .08);
 
     box-shadow:
-        0 10px 40px rgba(0, 0, 0, .18);
+
+0 20px 50px rgba(0,0,0,.20);
 }
 
+.navbar.nav-hidden{
 
+    transform:translateY(-110%);
+
+}
 /* ==========================================
    CONTAINER
 ========================================== */
@@ -77,18 +90,25 @@ background: var(--primary-dark);
 }
 
 .logo img {
+.logo img{
 
-    width: auto;
+    width:auto;
 
-    height: 58px;
+    height:58px;
 
-    object-fit: contain;
+    object-fit:contain;
 
     transition:
-        height .45s ease,
-        transform .45s ease;
+        transform .45s ease,
+        height .45s ease;
+
 }
 
+.logo:hover img{
+
+    transform:scale(1.05);
+
+}
 .navbar.scrolled .logo img {
 
     height: 48px;
@@ -105,7 +125,7 @@ background: var(--primary-dark);
 
     align-items: center;
 
-    gap: 30px;
+    gap: 36px;
 
     margin-left: auto;
 }
@@ -126,9 +146,9 @@ background: var(--primary-dark);
     color: rgba(255, 255, 255, .92);
     text-shadow: 0 1px 3px rgba(0, 0, 0, .35);
 
-    font-size: 13px;
+    font-size: 14px;
 
-    font-weight: 500;
+    font-weight: 600;
 
     letter-spacing: .01em;
 
@@ -153,9 +173,10 @@ background: var(--primary-dark);
 
     width: 0;
 
-    height: 2px;
+    height: 3px;
 
-    border-radius: 10px;
+    border-radius: 999px;
+   
 
     background: var(--primary);
 
@@ -214,6 +235,8 @@ background: var(--primary-dark);
     border-radius: 10px;
 
     color: #04120b;
+     box-shadow:
+    0 12px 30px rgba(76,175,80,.25);
 
     background: var(--primary);
 
@@ -235,7 +258,9 @@ background: var(--primary-dark);
 
     background: var(--primary-light);
 
-    transform: translateY(-2px);
+    transform:
+    translateY(-3px)
+    scale(1.03);
 
     box-shadow:
         0 0 30px rgba(
