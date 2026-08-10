@@ -1,14 +1,7 @@
 ﻿/* ==========================================
    HERO SECTION
 ========================================== */
-.hero{
-    position:relative;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    padding:140px 0 80px;
-    overflow:hidden;
-}
+
 /* ==========================================
    HERO SECTION
 ========================================== */
@@ -16,31 +9,48 @@
 .hero{
     position:relative;
     min-height:100vh;
+
     display:flex;
     align-items:center;
+
     padding:140px 0 80px;
+
     overflow:hidden;
+
+    background:
+        radial-gradient(circle at top right,
+            rgba(124,192,67,.18),
+            transparent 35%),
+
+        radial-gradient(circle at bottom left,
+            rgba(37,99,235,.14),
+            transparent 40%),
+
+        #071218;
 }
 
 /* STEP 7 - ADD HERE */
 
 .hero::before{
+
     content:"";
+
     position:absolute;
 
-    width:600px;
-    height:600px;
+    width:650px;
+    height:650px;
 
-    top:-180px;
-    right:-180px;
+    top:-220px;
+    right:-220px;
 
-    background: radial-gradient(
-        circle,
-        rgba(201,226,101,.55) 0%,
-        rgba(201,226,101,0) 70%
-    );
+    background:
+        radial-gradient(circle,
+            rgba(201,226,101,.55),
+            transparent 70%);
 
-    filter:blur(100px);
+    filter:blur(120px);
+
+    animation:blobOne 12s ease-in-out infinite;
 
     pointer-events:none;
 
@@ -48,27 +58,32 @@
 }
 
 .hero::after{
+
     content:"";
+
     position:absolute;
 
-    width:500px;
-    height:500px;
+    width:550px;
+    height:550px;
 
     left:-180px;
-    bottom:-150px;
+    bottom:-180px;
 
-    background: radial-gradient(
-        circle,
-        rgba(37,99,235,.45) 0%,
-        rgba(37,99,235,0) 70%
-    );
+    background:
+        radial-gradient(circle,
+            rgba(59,130,246,.35),
+            transparent 70%);
 
-    filter:blur(100px);
+    filter:blur(120px);
+
+    animation:blobTwo 15s ease-in-out infinite;
 
     pointer-events:none;
 
     z-index:1;
 }
+
+
 
 /* Existing code continues */
 
@@ -373,6 +388,39 @@
     color:#0f172a;
     transform:translateY(-4px);
 }
+/* ==========================================
+   HERO TRUST BADGES
+========================================== */
+
+.hero-trust{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin:35px 0;
+
+}
+
+.hero-trust span{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:14px;
+
+    backdrop-filter:blur(12px);
+
+}
 .hero-mini-stats{
 
     display:flex;
@@ -436,8 +484,27 @@
 
     position:relative;
 
-}
+    padding:22px;
 
+    border-radius:34px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.03)
+        );
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(25px);
+
+    box-shadow:
+
+        0 45px 90px rgba(0,0,0,.45);
+
+}
 .floating-card{
 
     position:absolute;
@@ -528,10 +595,50 @@
     bottom:20px;
 
 }
+}
+@keyframes blobOne{
+
+    0%,100%{
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+            translate(-40px,25px)
+            scale(1.12);
+
+    }
 
 }
 
-Add-Content -Path "static\css\hero.css" -Value @'
+@keyframes blobTwo{
+
+    0%,100%{
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+            translate(35px,-20px)
+            scale(.9);
+
+    }
+
+}
+
+
+
+
 
 /* ==========================================
    SIMPLE FADE-IN (replaces GSAP scroll pin)
@@ -540,6 +647,7 @@ Add-Content -Path "static\css\hero.css" -Value @'
 .hero-title,
 .hero-description,
 .hero-buttons,
+
 .hero-mini-stats {
     opacity: 0;
     transform: translateY(30px);
