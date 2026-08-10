@@ -30,62 +30,83 @@
 
     <div class="container hero-container">
 
-        <div class="hero-content">
+    <!-- LEFT CONTENT -->
+    <div class="hero-content">
 
-            <span class="hero-badge" id="heroBadge">
-                🌿 Sustainable Packaging Solutions
-            </span>
+        <span class="hero-badge" id="heroBadge">
+            Sustainable Packaging Leader
+        </span>
 
-            <h1 class="hero-title" id="heroTitle">
-                Sustainable Packaging
-                <span>for a Greener Tomorrow</span>
-            </h1>
+        <h1 class="hero-title" id="heroTitle">
+            Sustainable Packaging
+            <span>for a Greener Tomorrow</span>
+        </h1>
 
-            <p class="hero-description" id="heroDescription">
-                Premium eco-friendly paper bags and sustainable packaging
-                solutions designed for businesses that care about quality
-                and the environment.
-            </p>
+        <p class="hero-description" id="heroDescription">
+            Premium eco-friendly paper bags and sustainable packaging
+            solutions manufactured with cutting-edge automation,
+            helping brands build a greener future.
+        </p>
 
-            <div class="hero-buttons">
+        <div class="hero-buttons">
 
-                <a href="{% url 'products:list' %}"
-                   class="btn btn-primary"
-                   id="heroPrimaryBtn">
-                    Explore Products
-                </a>
+            <a href="{% url 'products:list' %}"
+               class="btn btn-primary"
+               id="heroPrimaryBtn">
+                Explore Products
+            </a>
 
-                <a href="{% url 'quotes:view' %}"
-                   class="btn btn-outline"
-                   id="heroSecondaryBtn">
-                    Request Quote
-                </a>
+            <a href="{% url 'quotes:view' %}"
+               class="btn btn-outline"
+               id="heroSecondaryBtn">
+                Request Quote
+            </a>
 
+        </div>
+
+        <div class="hero-mini-stats">
+
+            <div class="stat-card">
+                <strong>3 Lakh+</strong>
+                <span>Bags / Day</span>
             </div>
 
-            <div class="hero-mini-stats">
+            <div class="stat-card">
+                <strong>100%</strong>
+                <span>Automated Plant</span>
+            </div>
 
-                <div>
-                    <strong>3 Lakh+</strong>
-                    <span>Bags per day</span>
-                </div>
-
-                <div>
-                    <strong>100%</strong>
-                    <span>Automated Plant</span>
-                </div>
-
-                <div>
-                    <strong>30+</strong>
-                    <span>Trusted Clients</span>
-                </div>
-
+            <div class="stat-card">
+                <strong>30+</strong>
+                <span>Trusted Clients</span>
             </div>
 
         </div>
 
     </div>
 
+    <!-- RIGHT SIDE -->
+    <div class="hero-image">
+
+        <div class="hero-image-card">
+
+            <img src="{% static 'images/hero/ecoparrot-handoff.png' %}"
+                 alt="Ecoparrot Packaging">
+
+            <div class="floating-card card-1">
+                <span>🌱 Eco Friendly</span>
+            </div>
+
+            <div class="floating-card card-2">
+                <strong>100%</strong>
+                <small>Sustainable</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
     <!-- =========================
          Navigation Dots
     ========================== -->
