@@ -989,3 +989,225 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+/* =========================================================
+   ECOPARROT — HERO → ABOUT TRANSITION
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (
+        typeof gsap === "undefined" ||
+        typeof ScrollTrigger === "undefined"
+    ) {
+        return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const hero =
+        document.querySelector(".hero");
+
+    const about =
+        document.querySelector(".cinematic-about");
+
+    if (!hero || !about) {
+        return;
+    }
+
+
+    /* ==============================================
+       ABOUT ELEMENTS
+    ============================================== */
+
+    const aboutContent =
+        about.querySelector(".about-content");
+
+    const aboutImage =
+        about.querySelector(
+            ".about-image, .about-visual, img"
+        );
+
+    const aboutTitle =
+        about.querySelector(
+            ".section-title, h2"
+        );
+
+    const aboutText =
+        about.querySelector(
+            ".about-description, p"
+        );
+
+
+    /* ==============================================
+       INITIAL POSITION
+    ============================================== */
+
+    gsap.set(about, {
+        yPercent: 12
+    });
+
+
+    if (aboutContent) {
+
+        gsap.set(aboutContent, {
+            y: 80,
+            opacity: 0
+        });
+
+    }
+
+
+    if (aboutImage) {
+
+        gsap.set(aboutImage, {
+            scale: 0.88,
+            y: 80,
+            opacity: 0
+        });
+
+    }
+
+
+    if (aboutTitle) {
+
+        gsap.set(aboutTitle, {
+            y: 70,
+            opacity: 0
+        });
+
+    }
+
+
+    if (aboutText) {
+
+        gsap.set(aboutText, {
+            y: 50,
+            opacity: 0
+        });
+
+    }
+
+
+    /* ==============================================
+       HERO → ABOUT TIMELINE
+    ============================================== */
+
+    const transition =
+        gsap.timeline({
+
+            scrollTrigger: {
+
+                trigger: about,
+
+                start: "top 90%",
+
+                end: "top 20%",
+
+                scrub: 1.2,
+
+                invalidateOnRefresh: true
+
+            }
+
+        });
+
+
+    /* ==============================================
+       ABOUT PANEL ENTERS
+    ============================================== */
+
+    transition.to(
+        about,
+        {
+            yPercent: 0,
+            ease: "none",
+            duration: 1
+        },
+        0
+    );
+
+
+    /* ==============================================
+       IMAGE ENTERS WITH SCALE
+    ============================================== */
+
+    if (aboutImage) {
+
+        transition.to(
+            aboutImage,
+            {
+                scale: 1,
+                y: 0,
+                opacity: 1,
+                ease: "power2.out",
+                duration: 0.9
+            },
+            0.05
+        );
+
+    }
+
+
+    /* ==============================================
+       TITLE ENTERS LATER
+    ============================================== */
+
+    if (aboutTitle) {
+
+        transition.to(
+            aboutTitle,
+            {
+                y: 0,
+                opacity: 1,
+                ease: "power2.out",
+                duration: 0.65
+            },
+            0.20
+        );
+
+    }
+
+
+    /* ==============================================
+       TEXT FOLLOWS TITLE
+    ============================================== */
+
+    if (aboutText) {
+
+        transition.to(
+            aboutText,
+            {
+                y: 0,
+                opacity: 1,
+                ease: "power2.out",
+                duration: 0.55
+            },
+            0.35
+        );
+
+    }
+
+
+    /* ==============================================
+       CONTENT FOLLOWS
+    ============================================== */
+
+    if (aboutContent) {
+
+        transition.to(
+            aboutContent,
+            {
+                y: 0,
+                opacity: 1,
+                ease: "none",
+                duration: 0.8
+            },
+            0.15
+        );
+
+    }
+
+
+    ScrollTrigger.refresh();
+
+});
