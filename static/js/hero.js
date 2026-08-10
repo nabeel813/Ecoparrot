@@ -1211,3 +1211,262 @@ document.addEventListener("DOMContentLoaded", function () {
     ScrollTrigger.refresh();
 
 });
+
+/* =========================================================
+   ECOPARROT — HERO → ABOUT CINEMATIC TRANSITION
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (
+        typeof gsap === "undefined" ||
+        typeof ScrollTrigger === "undefined"
+    ) {
+        console.warn("GSAP / ScrollTrigger not found.");
+        return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const hero = document.querySelector(".hero");
+    const about = document.querySelector(".cinematic-about");
+
+    if (!hero || !about) {
+        console.warn("Hero or About section not found.");
+        return;
+    }
+
+
+    /* =====================================================
+       ABOUT ELEMENTS
+    ===================================================== */
+
+    const aboutImage =
+        about.querySelector(".about-image");
+
+    const aboutImageElement =
+        about.querySelector(".about-image img");
+
+    const aboutBadge =
+        about.querySelector(".about-badge");
+
+    const aboutContent =
+        about.querySelector(".about-content");
+
+    const sectionHeader =
+        about.querySelector(".section-header");
+
+    const sectionTitle =
+        about.querySelector(".section-title");
+
+    const paragraphs =
+        about.querySelectorAll(".about-content > p");
+
+    const missionCards =
+        about.querySelectorAll(".mission-card");
+
+    const learnMore =
+        about.querySelector(".about-content .btn");
+
+
+    /* =====================================================
+       INITIAL ABOUT STATE
+    ===================================================== */
+
+    gsap.set(aboutImage, {
+        x: -120,
+        opacity: 0
+    });
+
+    gsap.set(aboutImageElement, {
+        scale: 0.82
+    });
+
+    gsap.set(aboutBadge, {
+        y: 40,
+        opacity: 0
+    });
+
+    gsap.set(aboutContent, {
+        x: 100,
+        opacity: 0
+    });
+
+    gsap.set(sectionHeader, {
+        y: 60,
+        opacity: 0
+    });
+
+    gsap.set(paragraphs, {
+        y: 45,
+        opacity: 0
+    });
+
+    gsap.set(missionCards, {
+        y: 50,
+        opacity: 0,
+        scale: 0.94
+    });
+
+    gsap.set(learnMore, {
+        y: 40,
+        opacity: 0
+    });
+
+
+    /* =====================================================
+       ABOUT SCROLL TIMELINE
+    ===================================================== */
+
+    const aboutTimeline = gsap.timeline({
+
+        scrollTrigger: {
+
+            trigger: about,
+
+            start: "top 85%",
+
+            end: "top 20%",
+
+            scrub: 1.2,
+
+            invalidateOnRefresh: true
+
+        }
+
+    });
+
+
+    /* =====================================================
+       IMAGE — ENTERS FROM LEFT
+    ===================================================== */
+
+    aboutTimeline.to(
+        aboutImage,
+        {
+            x: 0,
+            opacity: 1,
+            ease: "power2.out",
+            duration: 0.8
+        },
+        0
+    );
+
+
+    /* =====================================================
+       IMAGE — CINEMATIC SCALE
+    ===================================================== */
+
+    aboutTimeline.to(
+        aboutImageElement,
+        {
+            scale: 1,
+            ease: "power2.out",
+            duration: 1
+        },
+        0
+    );
+
+
+    /* =====================================================
+       BADGE — FLOATS UP
+    ===================================================== */
+
+    aboutTimeline.to(
+        aboutBadge,
+        {
+            y: 0,
+            opacity: 1,
+            ease: "power2.out",
+            duration: 0.5
+        },
+        0.25
+    );
+
+
+    /* =====================================================
+       CONTENT — ENTERS FROM RIGHT
+    ===================================================== */
+
+    aboutTimeline.to(
+        aboutContent,
+        {
+            x: 0,
+            opacity: 1,
+            ease: "power2.out",
+            duration: 0.8
+        },
+        0.05
+    );
+
+
+    /* =====================================================
+       TITLE
+    ===================================================== */
+
+    aboutTimeline.to(
+        sectionHeader,
+        {
+            y: 0,
+            opacity: 1,
+            ease: "power2.out",
+            duration: 0.55
+        },
+        0.20
+    );
+
+
+    /* =====================================================
+       PARAGRAPHS
+    ===================================================== */
+
+    aboutTimeline.to(
+        paragraphs,
+        {
+            y: 0,
+            opacity: 1,
+            stagger: 0.10,
+            ease: "power2.out",
+            duration: 0.55
+        },
+        0.32
+    );
+
+
+    /* =====================================================
+       VISION + MISSION CARDS
+    ===================================================== */
+
+    aboutTimeline.to(
+        missionCards,
+        {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            stagger: 0.12,
+            ease: "power2.out",
+            duration: 0.55
+        },
+        0.48
+    );
+
+
+    /* =====================================================
+       BUTTON
+    ===================================================== */
+
+    aboutTimeline.to(
+        learnMore,
+        {
+            y: 0,
+            opacity: 1,
+            ease: "power2.out",
+            duration: 0.45
+        },
+        0.70
+    );
+
+
+    ScrollTrigger.refresh();
+
+});

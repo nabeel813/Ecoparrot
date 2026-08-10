@@ -4,20 +4,22 @@
 
 {% block content %}
 
-    {% include 'website/partials/hero.html' %}
+{% include 'website/partials/hero.html' %}
 
-    {% include 'website/partials/about-section.html' %}
+<section class="home-about-section">
+    <div class="container">
+        {% include 'website/partials/about-section.html' %}
+    </div>
+</section>
 
-    {% include 'website/partials/why-choose-section.html' %}
+{% include 'website/partials/why-choose-section.html' %}
 
-    {% include 'website/partials/products-section.html' %}
+{% include 'website/partials/products-section.html' %}
 
-    {% include 'website/partials/manufacturing-section.html' %}
+{% include 'website/partials/manufacturing-section.html' %}
 
-    {% include 'website/partials/clients-section.html' %}
+{% include 'website/partials/clients-section.html' %}
 
-    {% include 'website/partials/gallery-section.html' %}
-
-
+{% include 'website/partials/gallery-section.html' %}
 
 {% endblock %}

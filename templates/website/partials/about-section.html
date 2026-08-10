@@ -1,54 +1,143 @@
 {% load static %}
-<section class="about-section cinematic-about"></section>
+
+<section class="about-section cinematic-about">
+
     <div class="container about-container">
 
+        <!-- =========================================
+             About Image
+        ========================================== -->
+
         <div class="about-image reveal-left">
-            <img src="{% static 'images/hero/hero-product.png' %}" alt="Ecoparrot eco-friendly bags">
+
+            <img
+                src="{% static 'images/hero/hero-product.png' %}"
+                alt="Ecoparrot eco-friendly bags"
+            >
+
             <div class="about-badge glass">
+
                 <strong>10+ Years</strong>
-                <span>Manufacturing Expertise</span>
+
+                <span>
+                    Manufacturing Expertise
+                </span>
+
             </div>
+
         </div>
+
+
+        <!-- =========================================
+             About Content
+        ========================================== -->
 
         <div class="about-content reveal-right">
 
-            <div class="section-header" style="text-align:left; margin-bottom:30px;">
-                <span class="section-subtitle">About Us</span>
-                <h2 class="section-title">Rooted in Sustainability, Built for Business</h2>
+            <div
+                class="section-header"
+                style="text-align:left; margin-bottom:30px;"
+            >
+
+                <span class="section-subtitle">
+                    About Us
+                </span>
+
+                <h2 class="section-title">
+                    Rooted in Sustainability, Built for Business
+                </h2>
+
             </div>
 
-            <p>
-                Ecoparrot PriPac Pvt Ltd is a leading manufacturer of eco-friendly packaging
-                solutions based in Kerala, India. We specialize in customized paper bags and
-                non-woven bags designed to meet the diverse packaging needs of supermarkets,
-                fashion boutiques, restaurants &amp; cafés, bakeries, corporate companies, event
-                management firms, the healthcare sector, and educational institutions.
-            </p>
+
+            <!-- First Paragraph -->
 
             <p>
-                Driven by a strong commitment to sustainability, innovation, and quality, we
-                help businesses transition towards environmentally responsible packaging
-                without compromising on durability, functionality, or brand appeal.
+                Ecoparrot PriPac Pvt Ltd is a leading manufacturer
+                of eco-friendly packaging solutions based in Kerala,
+                India. We specialize in customized paper bags and
+                non-woven bags designed to meet the diverse packaging
+                needs of supermarkets, fashion boutiques, restaurants
+                &amp; cafés, bakeries, corporate companies, event
+                management firms, the healthcare sector, and
+                educational institutions.
             </p>
+
+
+            <!-- Second Paragraph -->
+
+            <p>
+                Driven by a strong commitment to sustainability,
+                innovation, and quality, we help businesses transition
+                towards environmentally responsible packaging without
+                compromising on durability, functionality, or brand
+                appeal.
+            </p>
+
+
+            <!-- =========================================
+                 Vision / Mission
+            ========================================== -->
 
             <div class="about-mission-grid">
+
+                <!-- Vision -->
+
                 <div class="mission-card">
-                    <span class="mission-icon">🎯</span>
-                    <h4>Our Vision</h4>
-                    <p>To become India's most trusted eco-friendly packaging manufacturer,
-                        contributing to a greener future.</p>
+
+                    <span class="mission-icon">
+                        🎯
+                    </span>
+
+                    <h4>
+                        Our Vision
+                    </h4>
+
+                    <p>
+                        To become India's most trusted eco-friendly
+                        packaging manufacturer, contributing to a
+                        greener future.
+                    </p>
+
                 </div>
+
+
+                <!-- Mission -->
+
                 <div class="mission-card">
-                    <span class="mission-icon">🌱</span>
-                    <h4>Our Mission</h4>
-                    <p>Promote sustainable alternatives to plastic while delivering
-                        premium-quality, custom-branded packaging.</p>
+
+                    <span class="mission-icon">
+                        🌱
+                    </span>
+
+                    <h4>
+                        Our Mission
+                    </h4>
+
+                    <p>
+                        Promote sustainable alternatives to plastic
+                        while delivering premium-quality,
+                        custom-branded packaging.
+                    </p>
+
                 </div>
+
             </div>
 
-            <a href="{% url 'about' %}" class="btn btn-outline">Learn More About Us</a>
+
+            <!-- =========================================
+                 Learn More
+            ========================================== -->
+
+            <a
+                href="{% url 'about' %}"
+                class="btn btn-outline"
+            >
+                Learn More About Us
+            </a>
 
         </div>
 
     </div>
+
 </section>
