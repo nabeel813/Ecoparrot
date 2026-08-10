@@ -1,0 +1,42 @@
+{% load static %}
+
+<section class="testimonials" id="testimonials">
+    <div class="container">
+
+        <div class="section-header">
+            <span class="section-subtitle">Client Voices</span>
+            <h2 class="section-title">What Our Customers Say</h2>
+            <p class="section-description">
+                Real feedback from the retailers, cafés, and businesses we manufacture for
+                every day.
+            </p>
+        </div>
+
+        {% if testimonials %}
+        <div class="grid grid-3 testimonials-grid">
+            {% for t in testimonials %}
+            <div class="card testimonial-card reveal-up">
+                <div class="testimonial-stars" aria-label="{{ t.rating }} out of 5 stars">
+                    {% for _ in t.star_range %}★{% endfor %}
+                </div>
+                <p class="testimonial-quote">&ldquo;{{ t.quote }}&rdquo;</p>
+                <div class="testimonial-author">
+                    {% if t.author_photo %}
+                        <img src="{{ t.author_photo.url }}" alt="{{ t.author_name }}" class="testimonial-avatar">
+                    {% else %}
+                        <span class="testimonial-avatar testimonial-avatar-fallback">{{ t.author_name|first }}</span>
+                    {% endif %}
+                    <div>
+                        <strong>{{ t.author_name }}</strong>
+                        {% if t.author_role %}<span>{{ t.author_role }}</span>{% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="testimonials-empty">Testimonials will appear here once added from the admin dashboard.</p>
+        {% endif %}
+
+    </div>
+</section>

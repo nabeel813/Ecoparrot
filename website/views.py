@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from products.models import Product
-from .models import Client, ManufacturingCapability, ManufacturingPhoto
+from .models import (
+    Client, ManufacturingCapability, ManufacturingPhoto,
+    Testimonial, TeamMember, Milestone,
+)
 
 STRENGTHS = [
     '100% Automated Manufacturing Plant',
@@ -68,6 +71,7 @@ def home(request):
         "strengths": STRENGTHS,
         "why_choose": WHY_CHOOSE,
         "stats": STATS,
+        "testimonials": Testimonial.objects.filter(is_featured=True),
     }
 
     return render(request, "website/home.html", context)
@@ -76,7 +80,14 @@ def home(request):
 
 
 def about(request):
-    context = {'why_choose': WHY_CHOOSE, 'stats': STATS, 'strengths': STRENGTHS}
+    context = {
+        'why_choose': WHY_CHOOSE,
+        'stats': STATS,
+        'strengths': STRENGTHS,
+        'team_members': TeamMember.objects.all(),
+        'milestones': Milestone.objects.all(),
+        'testimonials': Testimonial.objects.all(),
+    }
     return render(request, 'website/about.html', context)
 
 
@@ -91,4 +102,8 @@ def manufacturing(request):
 
 
 def clients(request):
-    return render(request, 'website/clients.html', {'clients': Client.objects.all()})
+    context = {
+        'clients': Client.objects.all(),
+        'testimonials': Testimonial.objects.all(),
+    }
+    return render(request, 'website/clients.html', context)

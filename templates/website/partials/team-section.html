@@ -1,0 +1,40 @@
+{% load static %}
+
+<section class="team" id="team">
+    <div class="container">
+
+        <div class="section-header">
+            <span class="section-subtitle">Our People</span>
+            <h2 class="section-title">Meet the Team Behind Ecoparrot</h2>
+            <p class="section-description">
+                From leadership to the production floor, the people who keep Ecoparrot
+                running — and our promises to customers.
+            </p>
+        </div>
+
+        {% if team_members %}
+        <div class="grid grid-4 team-grid">
+            {% for member in team_members %}
+            <div class="card team-card reveal-up">
+                <div class="team-photo">
+                    {% if member.photo %}
+                        <img src="{{ member.photo.url }}" alt="{{ member.name }}">
+                    {% else %}
+                        <span class="team-photo-fallback">{{ member.name|first }}</span>
+                    {% endif %}
+                </div>
+                <h4>{{ member.name }}</h4>
+                <span class="team-designation">{{ member.designation }}</span>
+                {% if member.bio %}<p class="team-bio">{{ member.bio }}</p>{% endif %}
+                {% if member.linkedin_url %}
+                <a href="{{ member.linkedin_url }}" target="_blank" rel="noopener noreferrer" class="team-linkedin">LinkedIn ↗</a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="team-empty">Team member profiles will appear here once added from the admin dashboard.</p>
+        {% endif %}
+
+    </div>
+</section>

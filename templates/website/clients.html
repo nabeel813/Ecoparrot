@@ -12,12 +12,13 @@
     <div class="container">
         <div class="grid grid-6 clients-grid-page">
             {% for client in clients %}
-            <div class="client-card glass reveal-up" title="{{ client.name }}">
+            <div class="client-card glass reveal-up" title="{{ client.name }}{% if client.industry %} — {{ client.industry }}{% endif %}">
                 {% if client.logo %}
                     <img src="{{ client.logo.url }}" alt="{{ client.name }}">
                 {% else %}
                     <span>{{ client.name }}</span>
                 {% endif %}
+                {% if client.industry %}<small class="client-industry">{{ client.industry }}</small>{% endif %}
             </div>
             {% empty %}
             <p>No clients added yet. Add clients from the admin dashboard.</p>
@@ -25,5 +26,7 @@
         </div>
     </div>
 </section>
+
+{% include 'website/partials/testimonials-section.html' %}
 
 {% endblock %}

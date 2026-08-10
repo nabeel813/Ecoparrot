@@ -1,0 +1,28 @@
+{% load static %}
+
+<section class="timeline-section" id="journey">
+    <div class="container">
+
+        <div class="section-header">
+            <span class="section-subtitle">Our Journey</span>
+            <h2 class="section-title">Milestones Along the Way</h2>
+        </div>
+
+        {% if milestones %}
+        <div class="timeline">
+            {% for m in milestones %}
+            <div class="timeline-item reveal-up">
+                <div class="timeline-year">{{ m.year }}</div>
+                <div class="timeline-content">
+                    <h4>{{ m.title }}</h4>
+                    {% if m.description %}<p>{{ m.description }}</p>{% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="timeline-empty">Milestones will appear here once added from the admin dashboard.</p>
+        {% endif %}
+
+    </div>
+</section>
