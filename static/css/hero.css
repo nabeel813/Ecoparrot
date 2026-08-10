@@ -1,4 +1,4 @@
-/* ==========================================
+﻿/* ==========================================
    HERO SECTION
 ========================================== */
 .hero{
@@ -53,7 +53,7 @@
 .hero-overlay{
     position:absolute;
     inset:0;
-    background:var(--gradient-hero);
+    background:linear-gradient(rgba(5,7,6,.55), rgba(5,7,6,.7));
 }
 .hero-dots{
 
