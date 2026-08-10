@@ -1,98 +1,210 @@
-/* ==========================================
-   ECOPARROT DESIGN SYSTEM
-   ========================================== */
+/* =========================================================
+   ECOPARROT — CINEMATIC DESIGN SYSTEM
+   Inspired by the visual language of the reference video
+   ========================================================= */
 
 :root {
 
-    /* ========= Brand Colors ========= */
+    /* =====================================================
+       BRAND
+       ===================================================== */
 
-    --primary: #14532D;
-    --primary-light: #1F7D53;
-    --primary-dark: #0F3D22;
+    --primary: #18C878;
+    --primary-light: #39E58C;
+    --primary-dark: #0A6B43;
 
-    --secondary: #84CC16;
+    --secondary: #8BE8B7;
+    --accent: #C9FFDD;
 
-    --accent: #D4AF37;
 
-    /* ========= Background Colors ========= */
+    /* =====================================================
+       DARK SYSTEM
+       ===================================================== */
 
-    --bg-main: #F7F9F4;
+    --bg-main: #050706;
+    --bg-dark: #050706;
+    --bg-dark-soft: #0A0F0C;
+
+    --bg-surface: #101612;
+    --bg-surface-light: #F4F7F3;
+
     --bg-light: #FFFFFF;
-    --bg-dark: #10241B;
 
-    /* ========= Text Colors ========= */
 
-    --text-dark: #1E1E1E;
-    --text-light: #6B7280;
+    /* =====================================================
+       TEXT
+       ===================================================== */
+
+    --text-dark: #111512;
+    --text-light: #7F8983;
+
     --text-white: #FFFFFF;
+    --text-muted-dark: #8D9691;
 
-    /* ========= Border ========= */
+    --text-muted-light: #5F6862;
 
-    --border-color: #E5E7EB;
 
-    /* ========= Glass Effect ========= */
+    /* =====================================================
+       BORDERS
+       ===================================================== */
 
-    --glass-bg: rgba(255,255,255,.15);
-    --glass-border: rgba(255,255,255,.25);
-    --blur: blur(20px);
+    --border-color: rgba(17, 24, 20, 0.10);
 
-    /* ========= Gradients ========= */
+    --border-dark: rgba(255, 255, 255, 0.10);
 
-    --gradient-primary: linear-gradient(
-        135deg,
-        #14532D,
-        #1F7D53
-    );
+    --border-green: rgba(24, 200, 120, 0.35);
 
-    --gradient-hero: linear-gradient(
-        rgba(10,25,15,.55),
-        rgba(10,25,15,.65)
-    );
 
-    /* ========= Typography ========= */
+    /* =====================================================
+       GLASS
+       ===================================================== */
 
-    --heading-font: "Poppins", sans-serif;
+    --glass-bg: rgba(255, 255, 255, 0.055);
+
+    --glass-bg-strong: rgba(255, 255, 255, 0.09);
+
+    --glass-border: rgba(255, 255, 255, 0.11);
+
+    --blur: blur(18px);
+
+
+    /* =====================================================
+       GRADIENTS
+       ===================================================== */
+
+    --gradient-primary:
+        linear-gradient(
+            135deg,
+            #18C878 0%,
+            #39E58C 100%
+        );
+
+    --gradient-dark:
+        linear-gradient(
+            135deg,
+            #050706 0%,
+            #0B120E 100%
+        );
+
+    --gradient-glow:
+        radial-gradient(
+            circle at center,
+            rgba(24, 200, 120, 0.18),
+            transparent 65%
+        );
+
+
+    /* =====================================================
+       TYPOGRAPHY
+       ===================================================== */
+
+    --heading-font: "Inter", sans-serif;
     --body-font: "Inter", sans-serif;
 
-    --fs-h1: 64px;
-    --fs-h2: 48px;
-    --fs-h3: 34px;
-    --fs-h4: 26px;
-    --fs-body: 16px;
-    --fs-small: 14px;
 
-    /* ========= Font Weight ========= */
+    /* Large editorial typography */
 
-    --fw-light:300;
-    --fw-regular:400;
-    --fw-medium:500;
-    --fw-semibold:600;
-    --fw-bold:700;
-    --fw-black:800;
+    --fs-display: clamp(
+        58px,
+        8vw,
+        128px
+    );
 
-    /* ========= Border Radius ========= */
+    --fs-h1: clamp(
+        48px,
+        6vw,
+        96px
+    );
 
-    --radius-sm:10px;
-    --radius-md:16px;
-    --radius-lg:24px;
-    --radius-xl:40px;
+    --fs-h2: clamp(
+        40px,
+        5vw,
+        76px
+    );
 
-    /* ========= Shadows ========= */
+    --fs-h3: clamp(
+        24px,
+        3vw,
+        42px
+    );
 
-    --shadow-sm:0 4px 12px rgba(0,0,0,.08);
+    --fs-h4: 24px;
 
-    --shadow-md:0 10px 30px rgba(0,0,0,.12);
+    --fs-body: 17px;
 
-    --shadow-lg:0 20px 60px rgba(0,0,0,.15);
+    --fs-small: 13px;
 
-    /* ========= Spacing ========= */
 
-    --section-padding:100px;
+    /* =====================================================
+       FONT WEIGHTS
+       ===================================================== */
 
-    --container-width:1200px;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-black: 800;
 
-    /* ========= Transition ========= */
 
-    --transition:.4s ease;
+    /* =====================================================
+       RADIUS
+       ===================================================== */
 
+    --radius-sm: 8px;
+
+    --radius-md: 14px;
+
+    --radius-lg: 24px;
+
+    --radius-xl: 40px;
+
+    --radius-xxl: 56px;
+
+
+    /* =====================================================
+       SHADOWS
+       ===================================================== */
+
+    --shadow-sm:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    --shadow-md:
+        0 20px 60px rgba(0, 0, 0, 0.15);
+
+    --shadow-lg:
+        0 35px 100px rgba(0, 0, 0, 0.28);
+
+    --shadow-green:
+        0 0 45px rgba(24, 200, 120, 0.18);
+
+
+    /* =====================================================
+       SPACING
+       ===================================================== */
+
+    --section-padding: 140px;
+
+    --container-width: 1280px;
+
+
+    /* =====================================================
+       TRANSITIONS
+       ===================================================== */
+
+    --transition-fast: 0.25s ease;
+
+    --transition: 0.45s cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+    );
+
+    --transition-slow: 0.8s cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+    );
 }

@@ -1,220 +1,316 @@
-/* ==========================================
-   RESET
-========================================== */
+/* =========================================================
+   ECOPARROT — BASE
+   ========================================================= */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
+    background: var(--bg-main);
 }
 
-body{
+body {
+    font-family: var(--body-font);
+    font-size: var(--fs-body);
 
-    font-family:var(--body-font);
-    font-size:var(--fs-body);
+    color: var(--text-dark);
 
-    color:var(--text-dark);
+    background: var(--bg-main);
 
-    background:var(--bg-main);
+    overflow-x: hidden;
 
-    overflow-x:hidden;
+    line-height: 1.65;
 
-    line-height:1.7;
-
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
-/* ==========================================
+
+/* =========================================================
    TYPOGRAPHY
-========================================== */
+   ========================================================= */
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
 
-    font-family:var(--heading-font);
+    font-weight: var(--fw-semibold);
 
-    font-weight:var(--fw-bold);
+    color: var(--text-dark);
 
-    color:var(--text-dark);
-
+    letter-spacing: -0.035em;
 }
 
-h1{
-    font-size:var(--fs-h1);
+h1 {
+    font-size: var(--fs-h1);
 }
 
-h2{
-    font-size:var(--fs-h2);
+h2 {
+    font-size: var(--fs-h2);
 }
 
-h3{
-    font-size:var(--fs-h3);
+h3 {
+    font-size: var(--fs-h3);
 }
 
-h4{
-    font-size:var(--fs-h4);
+h4 {
+    font-size: var(--fs-h4);
 }
 
-p{
-
-    color:var(--text-light);
-
+p {
+    color: var(--text-light);
 }
 
-a{
+a {
+    text-decoration: none;
 
-    text-decoration:none;
-
-    color:inherit;
-
+    color: inherit;
 }
 
-ul{
-
-    list-style:none;
-
+ul {
+    list-style: none;
 }
 
-img{
-
-    width:100%;
-
-    display:block;
-
+button,
+input,
+textarea,
+select {
+    font: inherit;
 }
 
-/* ==========================================
+button {
+    border: 0;
+}
+
+img {
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
    CONTAINER
-========================================== */
+   ========================================================= */
 
-.container{
+.container {
+    width: min(
+        calc(100% - 64px),
+        var(--container-width)
+    );
 
-    width:90%;
-
-    max-width:var(--container-width);
-
-    margin:auto;
-
+    margin-inline: auto;
 }
 
-/* ==========================================
+
+/* =========================================================
    SECTION
-========================================== */
+   ========================================================= */
 
-section{
+section {
+    position: relative;
 
-    padding:var(--section-padding) 0;
+    padding: var(--section-padding) 0;
+}
+
+
+/* =========================================================
+   DARK SECTION
+   ========================================================= */
+
+.section-dark {
+    color: var(--text-white);
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(24, 200, 120, 0.07),
+            transparent 35%
+        ),
+        var(--bg-dark);
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4 {
+    color: var(--text-white);
+}
+
+.section-dark p {
+    color: var(--text-muted-dark);
+}
+
+
+/* =========================================================
+   BUTTON SYSTEM
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 26px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.01em;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        box-shadow var(--transition);
+}
+
+
+/* Primary */
+
+.btn-primary {
+    color: #03130B;
+
+    background: var(--primary);
+
+    box-shadow:
+        0 0 0 rgba(24, 200, 120, 0);
 
 }
 
-/* ==========================================
-   BUTTON
-========================================== */
+.btn-primary:hover {
+    transform: translateY(-2px);
 
-.btn{
+    background: var(--primary-light);
 
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:16px 36px;
-
-    border-radius:var(--radius-md);
-
-    font-weight:600;
-
-    transition:var(--transition);
-
-    cursor:pointer;
-
-    border:none;
-
+    box-shadow:
+        0 0 35px rgba(24, 200, 120, 0.25);
 }
 
-.btn-primary{
 
-    background:var(--gradient-primary);
+/* Outline */
 
-    color:white;
+.btn-outline {
+    color: var(--text-dark);
 
-    box-shadow:var(--shadow-md);
+    background: transparent;
 
+    border: 1px solid rgba(17, 24, 20, 0.18);
 }
 
-.btn-primary:hover{
+.btn-outline:hover {
+    color: #03130B;
 
-    transform:translateY(-5px);
+    background: var(--primary);
 
+    border-color: var(--primary);
+
+    transform: translateY(-2px);
 }
 
-.btn-outline{
 
-    border:2px solid var(--primary);
+/* Dark outline */
 
-    color:var(--primary);
+.btn-outline-light {
+    color: white;
 
+    border-color:
+        rgba(255, 255, 255, 0.22);
 }
 
-.btn-outline:hover{
+.btn-outline-light:hover {
+    color: #03130B;
 
-    background:var(--primary);
+    background: var(--primary);
 
-    color:white;
-
+    border-color: var(--primary);
 }
 
-/* ==========================================
-   GLASS CARD
-========================================== */
 
-.glass{
+/* =========================================================
+   GLASS
+   ========================================================= */
 
-    background:var(--glass-bg);
+.glass {
+    background: var(--glass-bg);
 
-    backdrop-filter:var(--blur);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
 
-    border:1px solid var(--glass-border);
+    border: 1px solid var(--glass-border);
 
-    border-radius:var(--radius-lg);
-
+    border-radius: var(--radius-lg);
 }
 
-/* ==========================================
+
+/* =========================================================
    SCROLLBAR
-========================================== */
+   ========================================================= */
 
-::-webkit-scrollbar{
-
-    width:10px;
-
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-::-webkit-scrollbar-thumb{
-
-    background:var(--primary);
-
-    border-radius:20px;
-
+::-webkit-scrollbar-track {
+    background: #050706;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-thumb {
+    background: #1B3D2C;
 
-    background:#f2f2f2;
-
+    border-radius: 20px;
 }
 
-/* ==========================================
-   TEXT SELECTION
-========================================== */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
 
-::selection{
 
-    background:var(--primary);
+/* =========================================================
+   SELECTION
+   ========================================================= */
 
-    color:white;
+::selection {
+    color: #03130B;
+
+    background: var(--primary);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
 
 }
