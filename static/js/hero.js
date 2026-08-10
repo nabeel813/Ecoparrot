@@ -1,4 +1,3 @@
-Set-Content -Path "static\js\hero.js" -Encoding utf8 -Value @"
 /* =========================================================
    ECOPARROT - SIMPLE HERO SLIDESHOW + FADE-IN
    ========================================================= */
@@ -53,4 +52,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     hero.classList.add("hero-loaded");
 });
-"@
