@@ -333,3 +333,193 @@ updateHeroContent(0);
     });
 
 });
+
+/* ==========================================
+   CINEMATIC HERO SCROLL ANIMATION
+========================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (typeof gsap === "undefined" ||
+        typeof ScrollTrigger === "undefined") {
+        return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const hero = document.querySelector(".hero");
+
+    if (!hero) {
+        return;
+    }
+
+    const heroContent =
+        hero.querySelector(".hero-content");
+
+    const heroSlides =
+        hero.querySelectorAll(".hero-slide");
+
+    const heroBadge =
+        document.getElementById("heroBadge");
+
+    const heroTitle =
+        document.getElementById("heroTitle");
+
+    const heroDescription =
+        document.getElementById("heroDescription");
+
+    const heroButtons =
+        hero.querySelector(".hero-buttons");
+
+    const heroStats =
+        hero.querySelector(".hero-mini-stats");
+
+    const scrollIndicator =
+        hero.querySelector(".scroll-indicator");
+
+
+    /* ==========================================
+       SCROLL TIMELINE
+    ========================================== */
+
+    const heroTimeline = gsap.timeline({
+
+        scrollTrigger: {
+
+            trigger: hero,
+
+            start: "top top",
+
+            end: "bottom top",
+
+            scrub: 1.5,
+
+            invalidateOnRefresh: true
+
+        }
+
+    });
+
+
+    /* ------------------------------------------
+       Background
+    ------------------------------------------ */
+
+    heroTimeline.to(
+        heroSlides,
+        {
+            scale: 1.12,
+            yPercent: -5,
+            ease: "none"
+        },
+        0
+    );
+
+
+    /* ------------------------------------------
+       Main content
+    ------------------------------------------ */
+
+    heroTimeline.to(
+        heroContent,
+        {
+            y: -150,
+            ease: "none"
+        },
+        0
+    );
+
+
+    /* ------------------------------------------
+       Badge
+    ------------------------------------------ */
+
+    heroTimeline.to(
+        heroBadge,
+        {
+            y: -80,
+            opacity: 0,
+            ease: "none"
+        },
+        0
+    );
+
+
+    /* ------------------------------------------
+       Title
+    ------------------------------------------ */
+
+    heroTimeline.to(
+        heroTitle,
+        {
+            y: -105,
+            scale: 0.94,
+            ease: "none"
+        },
+        0
+    );
+
+
+    /* ------------------------------------------
+       Description
+    ------------------------------------------ */
+
+    heroTimeline.to(
+        heroDescription,
+        {
+            y: -70,
+            opacity: 0.35,
+            ease: "none"
+        },
+        0
+    );
+
+
+    /* ------------------------------------------
+       Buttons
+    ------------------------------------------ */
+
+    heroTimeline.to(
+        heroButtons,
+        {
+            y: -45,
+            opacity: 0,
+            ease: "none"
+        },
+        0
+    );
+
+
+    /* ------------------------------------------
+       Statistics
+    ------------------------------------------ */
+
+    heroTimeline.to(
+        heroStats,
+        {
+            y: -30,
+            opacity: 0,
+            ease: "none"
+        },
+        0
+    );
+
+
+    /* ------------------------------------------
+       Scroll indicator
+    ------------------------------------------ */
+
+    heroTimeline.to(
+        scrollIndicator,
+        {
+            opacity: 0,
+            y: 30,
+            ease: "none"
+        },
+        0
+    );
+
+
+    ScrollTrigger.refresh();
+
+});
