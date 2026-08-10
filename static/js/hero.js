@@ -523,3 +523,120 @@ document.addEventListener("DOMContentLoaded", function () {
     ScrollTrigger.refresh();
 
 });
+
+/* ==========================================
+   HERO → ABOUT CINEMATIC TRANSITION
+========================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (
+        typeof gsap === "undefined" ||
+        typeof ScrollTrigger === "undefined"
+    ) {
+        return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const hero = document.querySelector(".hero");
+
+    if (!hero) {
+        return;
+    }
+
+
+    /* ------------------------------------------
+       Find the first section after Hero
+    ------------------------------------------ */
+
+    const aboutSection = hero.nextElementSibling;
+
+    if (!aboutSection) {
+        return;
+    }
+
+
+    /* ------------------------------------------
+       Initial state
+    ------------------------------------------ */
+
+    gsap.set(aboutSection, {
+        y: 80,
+        opacity: 0
+    });
+
+
+    /* ------------------------------------------
+       Hero → About transition
+    ------------------------------------------ */
+
+    const transitionTimeline = gsap.timeline({
+
+        scrollTrigger: {
+
+            trigger: hero,
+
+            start: "70% top",
+
+            end: "bottom top",
+
+            scrub: 1.4,
+
+            invalidateOnRefresh: true
+
+        }
+
+    });
+
+
+    /* ------------------------------------------
+       Hero fades into the next section
+    ------------------------------------------ */
+
+    transitionTimeline.to(
+        hero,
+        {
+            opacity: 0.65,
+            scale: 0.97,
+            ease: "none"
+        },
+        0
+    );
+
+
+    /* ------------------------------------------
+       About rises into view
+    ------------------------------------------ */
+
+    transitionTimeline.to(
+        aboutSection,
+        {
+            y: 0,
+            opacity: 1,
+            ease: "none"
+        },
+        0.15
+    );
+
+
+    /* ------------------------------------------
+       About gets a subtle scale-up
+    ------------------------------------------ */
+
+    transitionTimeline.fromTo(
+        aboutSection,
+        {
+            scale: 0.985
+        },
+        {
+            scale: 1,
+            ease: "none"
+        },
+        0
+    );
+
+
+    ScrollTrigger.refresh();
+
+});
