@@ -67,48 +67,203 @@ function updateHeroContent(index) {
 
 }
 
-    // ==========================
-    // GSAP ANIMATION
-    // ==========================
+   // ==========================
+// HERO INTRO + SCROLL ANIMATION
+// ==========================
 
-    if (typeof gsap !== "undefined") {
+if (typeof gsap !== "undefined") {
 
-        const tl = gsap.timeline({
+    gsap.registerPlugin(ScrollTrigger);
+
+    const hero = document.querySelector(".hero");
+
+    const heroContent = document.querySelector(".hero-content");
+
+    const heroBackground = document.querySelector(".hero-background");
+
+    const heroSlides =
+        document.querySelectorAll(".hero-slide");
+
+    const heroBadge =
+        document.querySelector(".hero-badge");
+
+    const heroTitle =
+        document.querySelector(".hero-title");
+
+    const heroDescription =
+        document.querySelector(".hero-description");
+
+    const heroButtons =
+        document.querySelector(".hero-buttons");
+
+    const heroStats =
+        document.querySelector(".hero-mini-stats");
+
+
+    if (
+        hero &&
+        heroContent &&
+        heroBackground
+    ) {
+
+        // =====================================
+        // INITIAL HERO ENTRANCE
+        // =====================================
+
+        const intro = gsap.timeline({
             defaults: {
                 ease: "power3.out"
             }
         });
 
-        tl.from(".hero-badge", {
-            opacity: 0,
-            y: -20,
-            duration: .7
-        })
-        .from(".hero-title", {
-            opacity: 0,
-            y: 30,
-            duration: .8
-        }, "-=.4")
-        .from(".hero-description", {
-            opacity: 0,
-            y: 20,
-            duration: .7
-        }, "-=.5")
-        .from(".hero-buttons .btn", {
-            opacity: 0,
-            y: 20,
-            stagger: .15,
-            duration: .6
-        }, "-=.4")
-        .from(".hero-mini-stats div", {
-            opacity: 0,
-            y: 20,
-            stagger: .1,
-            duration: .6
-        }, "-=.3");
+
+        intro
+            .from(heroBadge, {
+                opacity: 0,
+                y: 30,
+                duration: 0.7
+            })
+
+            .from(heroTitle, {
+                opacity: 0,
+                y: 55,
+                duration: 1
+            }, "-=0.35")
+
+            .from(heroDescription, {
+                opacity: 0,
+                y: 35,
+                duration: 0.8
+            }, "-=0.55")
+
+            .from(heroButtons, {
+                opacity: 0,
+                y: 30,
+                duration: 0.7
+            }, "-=0.5")
+
+            .from(heroStats, {
+                opacity: 0,
+                y: 25,
+                duration: 0.7
+            }, "-=0.45");
+
+
+        // =====================================
+        // CINEMATIC SCROLL
+        // =====================================
+
+        const scrollTimeline = gsap.timeline({
+
+            scrollTrigger: {
+
+                trigger: hero,
+
+                start: "top top",
+
+                end: "bottom top",
+
+                scrub: 1.2,
+
+                invalidateOnRefresh: true
+
+            }
+
+        });
+
+
+        // Hero content moves upward
+        scrollTimeline.to(
+            heroContent,
+            {
+                y: -180,
+                scale: 0.92,
+                opacity: 0.15,
+                ease: "none"
+            },
+            0
+        );
+
+
+        // Background slowly zooms
+        scrollTimeline.to(
+            heroSlides,
+            {
+                scale: 1.16,
+                y: -40,
+                ease: "none"
+            },
+            0
+        );
+
+
+        // Badge disappears slightly faster
+        scrollTimeline.to(
+            heroBadge,
+            {
+                y: -70,
+                opacity: 0,
+                ease: "none"
+            },
+            0
+        );
+
+
+        // Title gets stronger movement
+        scrollTimeline.to(
+            heroTitle,
+            {
+                y: -90,
+                ease: "none"
+            },
+            0
+        );
+
+
+        // Description moves independently
+        scrollTimeline.to(
+            heroDescription,
+            {
+                y: -55,
+                ease: "none"
+            },
+            0
+        );
+
+
+        // Buttons move away
+        scrollTimeline.to(
+            heroButtons,
+            {
+                y: -35,
+                opacity: 0,
+                ease: "none"
+            },
+            0
+        );
+
+
+        // Stats disappear
+        scrollTimeline.to(
+            heroStats,
+            {
+                y: -25,
+                opacity: 0,
+                ease: "none"
+            },
+            0
+        );
+
+
+        // =====================================
+        // REFRESH SCROLLTRIGGER
+        // =====================================
+
+        ScrollTrigger.refresh();
 
     }
 
+}
     // ==========================
     // HERO SLIDER
     // ==========================
