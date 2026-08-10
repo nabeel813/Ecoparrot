@@ -1,0 +1,30 @@
+/* ==========================================
+   SCROLL REVEAL ANIMATIONS
+   (base states — GSAP ScrollTrigger animates these in via gsap-init.js;
+   this fallback ensures content stays visible if JS fails to load)
+========================================== */
+.reveal-up,
+.reveal-left,
+.reveal-right{
+    opacity:1;
+}
+
+.js-ready .reveal-up{
+    opacity:0;
+    transform:translateY(40px);
+}
+.js-ready .reveal-left{
+    opacity:0;
+    transform:translateX(-50px);
+}
+.js-ready .reveal-right{
+    opacity:0;
+    transform:translateX(50px);
+}
+
+/* Mobile menu open state */
+.navbar.menu-open .nav-links-mobile{
+    max-height:600px;
+    opacity:1;
+    pointer-events:auto;
+}

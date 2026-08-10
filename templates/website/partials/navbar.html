@@ -1,229 +1,166 @@
 {% load static %}
 
-<div class="container nav-container">
+<nav class="navbar">
 
-```
-<!-- Logo -->
-<a href="{% url 'home' %}" class="logo">
-    <img
-        src="{% static 'images/logo/transparentlogo.png' %}"
-        alt="Ecoparrot Logo"
-    >
-</a>
+    <div class="container nav-container">
 
-
-<!-- Desktop Navigation -->
-<ul class="nav-links">
-
-    <li>
-        <a
-            href="{% url 'home' %}"
-            class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}"
-        >
-            Home
+        <!-- Logo -->
+        <a href="{% url 'home' %}" class="logo">
+            <img
+                src="{% static 'images/logo/transparentlogo.png' %}"
+                alt="Ecoparrot Logo"
+            >
         </a>
-    </li>
 
-    <li>
-        <a
-            href="{% url 'about' %}"
-            class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}"
-        >
-            About
-        </a>
-    </li>
+        <!-- Desktop Navigation -->
+        <ul class="nav-links">
 
-    <li>
-        <a
-            href="{% url 'products:list' %}"
-            class="{% if 'products' in request.resolver_match.app_name|default:'' %}active{% endif %}"
-        >
-            Products
-        </a>
-    </li>
+            <li>
+                
+                    href="{% url 'home' %}"
+                    class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+                >
+                    Home
+                </a>
+            </li>
 
-    <li>
-        <a
-            href="{% url 'manufacturing' %}"
-            class="{% if request.resolver_match.url_name == 'manufacturing' %}active{% endif %}"
-        >
-            Manufacturing
-        </a>
-    </li>
+            <li>
+                
+                    href="{% url 'about' %}"
+                    class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}"
+                >
+                    About
+                </a>
+            </li>
 
-    <li>
-        <a
-            href="{% url 'gallery:list' %}"
-            class="{% if 'gallery' in request.resolver_match.app_name|default:'' %}active{% endif %}"
-        >
-            Gallery
-        </a>
-    </li>
+            <li>
+                
+                    href="{% url 'products:list' %}"
+                    class="{% if 'products' in request.resolver_match.app_name|default:'' %}active{% endif %}"
+                >
+                    Products
+                </a>
+            </li>
 
-    <li>
-        <a
-            href="{% url 'clients' %}"
-            class="{% if request.resolver_match.url_name == 'clients' %}active{% endif %}"
-        >
-            Clients
-        </a>
-    </li>
+            <li>
+                
+                    href="{% url 'manufacturing' %}"
+                    class="{% if request.resolver_match.url_name == 'manufacturing' %}active{% endif %}"
+                >
+                    Manufacturing
+                </a>
+            </li>
 
-    <li>
-        <a
-            href="{% url 'contact:view' %}"
-            class="{% if 'contact' in request.resolver_match.app_name|default:'' %}active{% endif %}"
-        >
-            Contact
-        </a>
-    </li>
+            <li>
+                
+                    href="{% url 'gallery:list' %}"
+                    class="{% if 'gallery' in request.resolver_match.app_name|default:'' %}active{% endif %}"
+                >
+                    Gallery
+                </a>
+            </li>
 
-</ul>
+            <li>
+                
+                    href="{% url 'clients' %}"
+                    class="{% if request.resolver_match.url_name == 'clients' %}active{% endif %}"
+                >
+                    Clients
+                </a>
+            </li>
 
+            <li>
+                
+                    href="{% url 'contact:view' %}"
+                    class="{% if 'contact' in request.resolver_match.app_name|default:'' %}active{% endif %}"
+                >
+                    Contact
+                </a>
+            </li>
 
-<!-- Right Side -->
-<div class="nav-right">
+        </ul>
 
-    <!-- Request Quote -->
-    <a
-        href="{% url 'quotes:view' %}"
-        class="nav-quote"
-    >
-        Request Quote
-    </a>
+        <!-- Right Side -->
+        <div class="nav-right">
 
+            <!-- Request Quote -->
+            
+                href="{% url 'quotes:view' %}"
+                class="nav-quote"
+            >
+                Request Quote
+            </a>
 
-    <!-- Mobile Menu Button -->
-    <button
-        type="button"
-        class="hamburger"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-    >
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+            <!-- Mobile Menu Button -->
+            <button
+                type="button"
+                class="hamburger"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-</div>
-```
+        </div>
 
-</div>
+    </div>
 
-<!-- Mobile Navigation -->
+    <!-- Mobile Navigation -->
+    <ul class="nav-links-mobile">
 
-<ul class="nav-links-mobile">
+        <li>
+            <a href="{% url 'home' %}">
+                Home
+            </a>
+        </li>
 
-```
-<li>
-    <a href="{% url 'home' %}">
-        Home
-    </a>
-</li>
+        <li>
+            <a href="{% url 'about' %}">
+                About
+            </a>
+        </li>
 
-<li>
-    <a href="{% url 'about' %}">
-        About
-    </a>
-</li>
+        <li>
+            <a href="{% url 'products:list' %}">
+                Products
+            </a>
+        </li>
 
-<li>
-    <a href="{% url 'products:list' %}">
-        Products
-    </a>
-</li>
+        <li>
+            <a href="{% url 'manufacturing' %}">
+                Manufacturing
+            </a>
+        </li>
 
-<li>
-    <a href="{% url 'manufacturing' %}">
-        Manufacturing
-    </a>
-</li>
+        <li>
+            <a href="{% url 'gallery:list' %}">
+                Gallery
+            </a>
+        </li>
 
-<li>
-    <a href="{% url 'gallery:list' %}">
-        Gallery
-    </a>
-</li>
+        <li>
+            <a href="{% url 'clients' %}">
+                Clients
+            </a>
+        </li>
 
-<li>
-    <a href="{% url 'clients' %}">
-        Clients
-    </a>
-</li>
+        <li>
+            <a href="{% url 'contact:view' %}">
+                Contact
+            </a>
+        </li>
 
-<li>
-    <a href="{% url 'contact:view' %}">
-        Contact
-    </a>
-</li>
+        <li>
+            
+                href="{% url 'quotes:view' %}"
+                class="mobile-quote"
+            >
+                Request a Quote
+            </a>
+        </li>
 
-<li>
-    <a
-        href="{% url 'quotes:view' %}"
-        class="mobile-quote"
-    >
-        Request a Quote
-    </a>
-</li>
-```
+    </ul>
 
-</ul>
-
-</div>
-
-<!-- Mobile Navigation -->
-
-<ul class="nav-links-mobile">
-
-<li>
-    <a href="{% url 'home' %}">
-        Home
-    </a>
-</li>
-
-<li>
-    <a href="{% url 'about' %}">
-        About
-    </a>
-</li>
-
-<li>
-    <a href="{% url 'products:list' %}">
-        Products
-    </a>
-</li>
-
-<li>
-    <a href="{% url 'manufacturing' %}">
-        Manufacturing
-    </a>
-</li>
-
-<li>
-    <a href="{% url 'gallery:list' %}">
-        Gallery
-    </a>
-</li>
-
-<li>
-    <a href="{% url 'clients' %}">
-        Clients
-    </a>
-</li>
-
-<li>
-    <a href="{% url 'contact:view' %}">
-        Contact
-    </a>
-</li>
-
-<li>
-    <a
-        href="{% url 'quotes:view' %}"
-        class="mobile-quote"
-    >
-        Request a Quote
-    </a>
-</li>
-
-</ul>
+</nav>

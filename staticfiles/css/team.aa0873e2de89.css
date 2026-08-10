@@ -1,0 +1,68 @@
+/* ==========================================
+   TEAM
+========================================== */
+.team{
+    background:var(--bg-light);
+}
+.team-grid{
+    text-align:center;
+}
+.team-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:30px 24px;
+}
+.team-photo{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    overflow:hidden;
+    margin-bottom:18px;
+    background:var(--gradient-primary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:4px solid var(--bg-main);
+    box-shadow:var(--shadow-sm);
+}
+.team-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.team-photo-fallback{
+    color:var(--text-white);
+    font-family:var(--heading-font);
+    font-weight:700;
+    font-size:32px;
+}
+.team-card h4{
+    margin-bottom:4px;
+    font-size:18px;
+}
+.team-designation{
+    display:inline-block;
+    color:var(--primary);
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+.team-bio{
+    color:var(--text-light);
+    font-size:14px;
+    line-height:1.6;
+}
+.team-linkedin{
+    display:inline-block;
+    margin-top:12px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--primary);
+}
+.team-empty{
+    text-align:center;
+    color:var(--text-light);
+}
