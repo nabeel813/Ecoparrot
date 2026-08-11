@@ -14,12 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
     /* ==========================================
        NAVBAR SCROLL
     ========================================== */
+function updateNavbar() {
 
-    function updateNavbar() {
-
-    const currentScroll = window.scrollY;
-
-    if (currentScroll > window.innerHeight * 0.35) {
+    if (window.scrollY > window.innerHeight * 0.35) {
 
         navbar.classList.add("scrolled");
 
@@ -28,22 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
         navbar.classList.remove("scrolled");
 
     }
-
-    if (
-        currentScroll > lastScrollY &&
-        currentScroll > 150 &&
-        !navbar.classList.contains("menu-open")
-    ) {
-
-        navbar.classList.add("nav-hidden");
-
-    } else {
-
-        navbar.classList.remove("nav-hidden");
-
-    }
-
-    lastScrollY = currentScroll;
 
 }
     /* ==========================================

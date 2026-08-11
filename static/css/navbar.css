@@ -3,6 +3,7 @@
 ========================================== */
 
 .navbar {
+
     position: fixed;
 
     top: 0;
@@ -14,25 +15,20 @@
 
     padding: 18px 0;
 
-background: transparent;
+    background: rgba(5, 7, 6, 0.35);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
     border-bottom: 1px solid transparent;
 
     transition:
-            
-    transform .45s ease,
-    background .45s ease,
-    backdrop-filter .45s ease,
-    border-color .45s ease,
-    padding .45s ease;
-        backdrop-filter:blur(0px);
-        transform:translateY(0);
+        background .45s ease,
+        backdrop-filter .45s ease,
+        border-color .45s ease,
+        padding .45s ease;
 
-will-change:transform;
-
--webkit-backdrop-filter:blur(0px);
 }
-
 
 /* ==========================================
    SCROLL EFFECT
@@ -59,8 +55,8 @@ will-change:transform;
 
     transform:translateY(-110%);
 
-} */
-/* ==========================================
+}
+/* ========================================== */
    CONTAINER
 ========================================== */
 
