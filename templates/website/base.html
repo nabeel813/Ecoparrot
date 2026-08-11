@@ -105,6 +105,7 @@
 <!-- =========================================
      JavaScript
      ========================================= -->
+<script src="https://unpkg.com/lucide@latest"></script>
 
 <script src="{% static 'js/main.js' %}"></script>
 
@@ -117,6 +118,272 @@
 <script src="{% static 'js/counter.js' %}"></script>
 
 <script src="{% static 'js/gsap-init.js' %}"></script>
+Yesterday 5:35 PM
+Ecoparrot(2).zip
+Zip Archive
+analyse the zip file and read and keep in mind each and every line of code
+Pasted code.css
+File
+this is my css
+hero.css
+File
+if any wrong code change and gave the correct one
+Pasted code(1).css
+File
+analyse the attachment and tell me what i need to fix the animation
+Ecoparrot(3).zip
+Zip Archive
+analyse the file and found the errors
+Today 3:32 PM
+Ecoparrot(4).zip
+Zip Archive
+analyse the file and read every line of code there is an issue happened look the all background becom black i need to change that please after analysing the file of code
+look i am saying that white texts
+Pasted code(3).css
+File
+Pasted code(3)(1).css
+File
+this is my hero css
 
+Excellent choice. This is actually one of the highest ROI improvements you can make. Replacing emojis with a consistent icon system instantly makes the site look more professional.
+
+Why Lucide?
+
+I recommend Lucide Icons because they are:
+
+✓ Clean and modern
+✓ Lightweight
+✓ SVG-based (crisp on all screens)
+✓ Easy to customize with CSS
+✓ Matches corporate websites
+Step 1 — Add Lucide
+
+In your base.html, just before your own JavaScript files, add:
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+Then, at the very end (after main.js, hero.js, etc.), add:
+
+<script>
+    lucide.createIcons();
+</script>
+
+That's all the setup required.
+
+Step 2 — Decide on one icon style
+
+Use only outlined icons across the site.
+
+Don't mix:
+
+Emoji ❌
+Font Awesome ❌
+Bootstrap Icons ❌
+
+Stick to Lucide everywhere.
+
+Step 3 — Icon mapping for your website
+
+Here's what I'd use throughout the site:
+
+Section	Current	Lucide Icon
+Sustainability	🌱	leaf
+Manufacturing	🏭	factory
+Recycle	♻	recycle
+Quality	✔	badge-check
+Delivery	🚚	truck
+Printing	🖨	printer
+Innovation	💡	lightbulb
+Experience	⭐	award
+Clients	🤝	handshake
+Team	👥	users
+Timeline	📈	chart-line
+Contact	📞	phone
+Email	✉	mail
+Location	📍	map-pin
+Quote	💬	message-circle
+Step 4 — Start with the Hero
+
+Instead of:
+
+<span>🌱 Eco Friendly</span>
+
+use:
+
+<span>
+    <i data-lucide="leaf"></i>
+    Eco Friendly
+</span>
+
+Instead of:
+
+<span>🏭 100% Automated</span>
+
+use:
+
+<span>
+    <i data-lucide="factory"></i>
+    100% Automated
+</span>
+
+Instead of:
+
+<span>♻ Sustainable</span>
+
+use:
+
+<span>
+    <i data-lucide="recycle"></i>
+    Sustainable
+</span>
+
+Instead of:
+
+<span>🇮🇳 Made in India</span>
+
+I'd avoid the flag emoji and use:
+
+<span>
+    <i data-lucide="map-pinned"></i>
+    Made in India
+</span>
+Step 5 — Style the icons
+
+Add this once to your global CSS:
+
+.hero-trust span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-trust svg {
+    width: 16px;
+    height: 16px;
+
+    stroke: var(--primary);
+
+    stroke-width: 2.3;
+
+    flex-shrink: 0;
+}
+
+Now every trust badge will have a perfectly aligned, consistent icon.
+
+Step 6 — Apply the same approach everywhere
+
+We can then replace icons in:
+
+Hero
+About
+Why Choose
+Manufacturing
+Products
+Timeline
+Contact
+Footer
+
+so the entire site uses one cohesive visual language.
+
+One recommendation before you start
+
+I noticed your site already has a strong green-and-white identity. Instead of adding lots of different icon colors, I'd keep all icons in your brand green (--primary) and let hover states or dark sections adjust them as needed. That consistency will make the whole design feel much more refined.
+
+Start with the Hero
+
+Replace the four emoji trust badges with Lucide icons first. Once you're happy with how they look, we'll roll the same design language through the rest of the website.
+
+<script>
+    lucide.createIcons();
+</script>
+do we need to add all the js files?
+
+
+No, don't add it after every JS file. You only need it once.
+
+Your base.html should look like this:
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<!-- Your JavaScript -->
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/navbar.js' %}"></script>
+<script src="{% static 'js/hero.js' %}"></script>
+<script src="{% static 'js/scroll.js' %}"></script>
+<script src="{% static 'js/counter.js' %}"></script>
+<script src="{% static 'js/gsap-init.js' %}"></script>
+
+<!-- Initialize Lucide -->
+<script>
+    lucide.createIcons();
+</script>
+
+{% block extra_js %}{% endblock %}
+Even better (recommended)
+
+Instead of placing the initialization directly in base.html, create a new file:
+
+static/js/icons.js
+
+with:
+
+document.addEventListener("DOMContentLoaded", function () {
+    lucide.createIcons();
+});
+
+Then include it after your other JS files:
+
+<script src="{% static 'js/icons.js' %}"></script>
+
+This is cleaner and keeps your HTML free of inline JavaScript, which is a better practice for a production Django project.
+
+Since we're upgrading your entire site to a premium standard, I recommend the icons.js approach. It also makes it easier to re-render icons later if you ever add dynamic content.
+
+i don't understand
+
+No problem 😊. Let's do the simplest method.
+
+Step 1
+
+In your base.html, find this part:
+
+<script src="{% static 'js/main.js' %}"></script>
+
+<script src="{% static 'js/navbar.js' %}"></script>
+
+<script src="{% static 'js/hero.js' %}"></script>
+
+<script src="{% static 'js/scroll.js' %}"></script>
+
+<script src="{% static 'js/counter.js' %}"></script>
+
+<script src="{% static 'js/gsap-init.js' %}"></script>
+Step 2
+
+Above those JavaScript files, add one line:
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+So it becomes:
+
+<!-- Lucide -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/navbar.js' %}"></script>
+<script src="{% static 'js/hero.js' %}"></script>
+<script src="{% static 'js/scroll.js' %}"></script>
+<script src="{% static 'js/counter.js' %}"></script>
+<script src="{% static 'js/gsap-init.js' %}"></script>
+:
+
+<script>
+    lucide.createIcons();
+</script>
 
 {% block extra_js %}{% endblock %}
