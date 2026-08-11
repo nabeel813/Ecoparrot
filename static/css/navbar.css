@@ -47,6 +47,7 @@
         1px solid rgba(255, 255, 255, .08);
 
 box-shadow: 0 20px 50px rgba(0,0,0,.20);
+}
 
 
 /* ========================================== */
@@ -221,7 +222,7 @@ box-shadow: 0 20px 50px rgba(0,0,0,.20);
 
     padding: 0 18px;
 
-    border-radius: 10px;
+    border-radius: 999px;
 
     color: #04120b;
      box-shadow:
