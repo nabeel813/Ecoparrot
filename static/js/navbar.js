@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbar =
         document.querySelector(".navbar");
 
+        const hamburger =
+    document.querySelector(".hamburger");
+
     let lastScrollY = window.scrollY;
 
 
@@ -27,6 +30,13 @@ function updateNavbar() {
     }
 
 }
+updateNavbar();
+
+window.addEventListener(
+    "scroll",
+    updateNavbar,
+    { passive: true }
+);
     /* ==========================================
        MOBILE MENU
     ========================================== */
