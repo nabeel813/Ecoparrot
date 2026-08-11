@@ -723,3 +723,130 @@
     text-shadow: none;
 }
 
+/* ==========================================
+   HERO — MOBILE RESPONSIVE FIX
+========================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: auto;
+        height: auto;
+        padding: 100px 20px 80px;
+        overflow: hidden;
+    }
+
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        align-items: stretch;
+    }
+
+    /* Main content */
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-badge {
+        font-size: 13px;
+        padding: 8px 14px;
+        display: inline-block;
+    }
+
+    .hero-title {
+        font-size: clamp(2.2rem, 9vw, 3.2rem);
+        line-height: 1.1;
+        letter-spacing: -1px;
+        margin-bottom: 18px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        line-height: 1.6;
+        max-width: 100%;
+        margin: 0 auto 22px;
+    }
+
+    /* Trust badges */
+    .hero-trust {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 25px;
+    }
+
+    .hero-trust span {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    /* Statistics */
+    .stat-card {
+        width: 100%;
+        max-width: 300px;
+        margin: 8px auto;
+        padding: 18px 20px;
+        text-align: center;
+    }
+
+    .stat-card strong {
+        font-size: 28px;
+    }
+
+    .stat-card span {
+        font-size: 13px;
+    }
+
+    /* Hero image */
+    .hero-image {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .hero-image-card {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero-image-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Floating cards */
+    .floating-card {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        margin: 10px auto 0;
+        width: fit-content;
+        max-width: 90%;
+    }
+
+    /* Navigation arrows */
+    .hero-prev,
+    .hero-next {
+        display: none;
+    }
+
+    /* Dots */
+    .hero-dots {
+        position: relative;
+        bottom: auto;
+        margin-top: 25px;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+        display: none;
+    }
+}
+
