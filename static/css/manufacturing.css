@@ -386,3 +386,16 @@
     }
 
 }
+
+/* ==========================================
+   SECTION DIVIDER OVERRIDE
+========================================== */
+
+.manufacturing::after{
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+}
