@@ -667,3 +667,59 @@
 .hero-loaded .hero-description { opacity: 1; transform: translateY(0); transition-delay: .4s; }
 .hero-loaded .hero-buttons   { opacity: 1; transform: translateY(0); transition-delay: .55s; }
 .hero-loaded .hero-mini-stats { opacity: 1; transform: translateY(0); transition-delay: .7s; }
+
+/* ==========================================
+   HERO — DARK TEXT
+========================================== */
+
+/* Small heading */
+.hero-badge {
+    color: #10241B;
+    text-shadow: none;
+}
+
+/* Main heading */
+.hero-title {
+    color: #10241B;
+    text-shadow: none;
+}
+
+.hero-title span {
+    color: #10241B;
+}
+
+/* Description */
+.hero-description {
+    color: #1E1E1E;
+    text-shadow: none;
+}
+
+/* Trust badges */
+.hero-trust span {
+    color: #10241B;
+    text-shadow: none;
+}
+
+/* Statistics cards */
+.stat-card strong {
+    color: #10241B;
+    text-shadow: none;
+}
+
+.stat-card span {
+    color: #1E1E1E;
+    text-shadow: none;
+}
+
+/* Floating cards on right image */
+.floating-card {
+    color: #10241B;
+}
+
+.floating-card strong,
+.floating-card small,
+.floating-card span {
+    color: #10241B;
+    text-shadow: none;
+}
+
