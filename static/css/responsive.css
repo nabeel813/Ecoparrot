@@ -1,98 +1,41 @@
 /* ==========================================
-   ECOPARROT DESIGN SYSTEM
+   ECOPARROT - GLOBAL RESPONSIVE OVERRIDES
+   ==========================================
+   NOTE: This file previously re-declared the
+   :root design-token variables (--fs-h1, --fs-h2,
+   --section-padding, --container-width, colors, etc.)
+   with FIXED, non-scaling values.
+
+   Because this file is loaded LAST in base.html,
+   those fixed values were silently overriding the
+   fluid, mobile-friendly clamp() values defined in
+   variables.css - which is why headings, spacing and
+   layout stayed desktop-sized on phones and everything
+   looked congested/cramped on mobile.
+
+   The single source of truth for design tokens is
+   static/css/variables.css. This file is now reserved
+   for genuine global responsive/mobile fixes only.
    ========================================== */
 
-:root {
+@media (max-width: 768px) {
 
-    /* ========= Brand Colors ========= */
+    .container {
+        width: 92%;
+    }
 
-    --primary: #14532D;
-    --primary-light: #1F7D53;
-    --primary-dark: #0F3D22;
+    section {
+        padding: calc(var(--section-padding) * 0.55) 0;
+    }
+}
 
-    --secondary: #84CC16;
+@media (max-width: 480px) {
 
-    --accent: #D4AF37;
+    .container {
+        width: 94%;
+    }
 
-    /* ========= Background Colors ========= */
-
-    --bg-main: #F7F9F4;
-    --bg-light: #FFFFFF;
-    --bg-dark: #10241B;
-
-    /* ========= Text Colors ========= */
-
-    --text-dark: #1E1E1E;
-    --text-light: #6B7280;
-    --text-white: #FFFFFF;
-
-    /* ========= Border ========= */
-
-    --border-color: #E5E7EB;
-
-    /* ========= Glass Effect ========= */
-
-    --glass-bg: rgba(255,255,255,.15);
-    --glass-border: rgba(255,255,255,.25);
-    --blur: blur(20px);
-
-    /* ========= Gradients ========= */
-
-    --gradient-primary: linear-gradient(
-        135deg,
-        #14532D,
-        #1F7D53
-    );
-
-    --gradient-hero: linear-gradient(
-        rgba(10,25,15,.55),
-        rgba(10,25,15,.65)
-    );
-
-    /* ========= Typography ========= */
-
-    --heading-font: "Poppins", sans-serif;
-    --body-font: "Inter", sans-serif;
-
-    --fs-h1: 64px;
-    --fs-h2: 48px;
-    --fs-h3: 34px;
-    --fs-h4: 26px;
-    --fs-body: 16px;
-    --fs-small: 14px;
-
-    /* ========= Font Weight ========= */
-
-    --fw-light:300;
-    --fw-regular:400;
-    --fw-medium:500;
-    --fw-semibold:600;
-    --fw-bold:700;
-    --fw-black:800;
-
-    /* ========= Border Radius ========= */
-
-    --radius-sm:10px;
-    --radius-md:16px;
-    --radius-lg:24px;
-    --radius-xl:40px;
-
-    /* ========= Shadows ========= */
-
-    --shadow-sm:0 4px 12px rgba(0,0,0,.08);
-
-    --shadow-md:0 10px 30px rgba(0,0,0,.12);
-
-    --shadow-lg:0 20px 60px rgba(0,0,0,.15);
-
-    /* ========= Spacing ========= */
-
-    --section-padding:100px;
-
-    --container-width:1200px;
-
-    /* ========= Transition ========= */
-
-    --transition:.4s ease;
-
+    section {
+        padding: calc(var(--section-padding) * 0.45) 0;
+    }
 }
