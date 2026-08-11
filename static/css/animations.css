@@ -10,31 +10,9 @@
     transform:none;
 }
 
-/* Hide only after JavaScript is ready */
-.js-ready .reveal-up{
-    opacity:0;
-    transform:translateY(60px);
-    will-change:transform, opacity;
-}
-
-.js-ready .reveal-left{
-    opacity:0;
-    transform:translateX(-70px);
-    will-change:transform, opacity;
-}
-
+.js-ready .reveal-up,
+.js-ready .reveal-left,
 .js-ready .reveal-right{
-    opacity:0;
-    transform:translateX(70px);
-    will-change:transform, opacity;
-}
-
-/* ==========================================
-   MOBILE MENU
-========================================== */
-
-.navbar.menu-open .nav-links-mobile{
-    max-height:600px;
     opacity:1;
-    pointer-events:auto;
+    transform:none;
 }
