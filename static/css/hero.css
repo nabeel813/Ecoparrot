@@ -337,17 +337,16 @@
 
     -webkit-text-fill-color:transparent;
 }
-.hero-description{
+.hero-description {
+    color: #17251D;
 
-    max-width:620px;
+    font-size: 15px;
 
-    font-size:19px;
+    line-height: 1.65;
 
-    line-height:1.9;
+    font-weight: 600;
 
-    color:rgba(255,255,255,.88);
-
-    margin-bottom:45px;
+    text-shadow: none;
 }
 .hero-buttons{
     display:flex;
