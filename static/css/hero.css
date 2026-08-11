@@ -927,21 +927,6 @@
 /* ==========================================
    SIMPLE FADE-IN (replaces GSAP scroll pin)
 ========================================== */
-.hero-badge,
-.hero-title,
-.hero-description,
-.hero-buttons,
-
-.hero-mini-stats {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity .8s ease, transform .8s ease;
-}
-.hero-loaded .hero-badge     { opacity: 1; transform: translateY(0); transition-delay: .1s; }
-.hero-loaded .hero-title     { opacity: 1; transform: translateY(0); transition-delay: .25s; }
-.hero-loaded .hero-description { opacity: 1; transform: translateY(0); transition-delay: .4s; }
-.hero-loaded .hero-buttons   { opacity: 1; transform: translateY(0); transition-delay: .55s; }
-.hero-loaded .hero-mini-stats { opacity: 1; transform: translateY(0); transition-delay: .7s; }
 
 /* ==========================================
    HERO — DARK TEXT
