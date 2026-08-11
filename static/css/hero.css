@@ -304,7 +304,7 @@
 }
 .hero-title{
 
-    color:#fff;
+    color:#10241B;
 
     font-size:clamp(3.5rem,6vw,5.8rem);
 
@@ -318,8 +318,7 @@
 
     margin-bottom:28px;
 
-    text-shadow:
-        0 5px 25px rgba(0,0,0,.45);
+    text-shadow:none;
 }
 
 .hero-title span{
