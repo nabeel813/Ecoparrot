@@ -738,17 +738,23 @@
     }
 
     /* Background */
-    .hero-background {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-    }
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    .hero-slide {
-        background-position: center center;
-        background-size: cover;
-    }
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+  .hero-slide {
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #10241B;
+}
 
     /* Darken background slightly so text remains readable */
     .hero-overlay {
