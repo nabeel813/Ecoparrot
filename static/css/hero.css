@@ -749,9 +749,9 @@
     overflow: hidden;
 }
 
-  .hero-slide {
-    background-position: center top;
-    background-size: 100% auto;
+.hero-slide {
+    background-position: center center;
+    background-size: contain;
     background-repeat: no-repeat;
     background-color: #10241B;
 }
