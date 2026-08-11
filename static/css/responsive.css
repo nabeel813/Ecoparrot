@@ -18,24 +18,1078 @@
    for genuine global responsive/mobile fixes only.
    ========================================== */
 
-@media (max-width: 768px) {
+/* =========================================================
+   ECOPARROT
+   GLOBAL RESPONSIVE SYSTEM
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    :root {
+        --section-padding: 90px;
+        --container-width: 92%;
+    }
 
     .container {
         width: 92%;
     }
 
-    section {
-        padding: calc(var(--section-padding) * 0.55) 0;
+    /* Typography */
+
+    .section-title {
+        font-size: clamp(34px, 5vw, 48px);
+        line-height: 1.15;
     }
+
+    .section-header {
+        margin-bottom: 50px;
+    }
+
+
+    /* =========================
+       GLOBAL GRIDS
+    ========================= */
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-6 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+
+    /* =========================
+       PRODUCT DETAIL
+    ========================= */
+
+    .product-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero-container {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: clamp(42px, 7vw, 70px);
+        max-width: 800px;
+    }
+
+    .hero-description {
+        max-width: 650px;
+        font-size: 17px;
+    }
+
+    .hero-image {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero-image-card {
+        padding: 18px;
+    }
+
+
+    /* Floating hero cards */
+
+    .card-1 {
+        left: 0;
+    }
+
+    .card-2 {
+        right: 0;
+    }
+
+
+    /* =========================
+       MANUFACTURING
+    ========================= */
+
+    .capabilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .strengths-list {
+        grid-template-columns: 1fr;
+    }
+
 }
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    :root {
+        --section-padding: 75px;
+    }
+
+
+    /* =========================
+       GLOBAL
+    ========================= */
+
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        width: calc(100% - 32px);
+        max-width: none;
+    }
+
+    section {
+        padding: var(--section-padding) 0;
+    }
+
+
+    /* =========================
+       TYPOGRAPHY
+    ========================= */
+
+    h1 {
+        font-size: clamp(36px, 10vw, 52px);
+    }
+
+    h2,
+    .section-title {
+        font-size: clamp(30px, 8vw, 42px);
+        line-height: 1.15;
+    }
+
+    h3 {
+        font-size: clamp(22px, 6vw, 30px);
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+
+    /* =========================
+       SECTION HEADER
+    ========================= */
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-subtitle {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        margin-bottom: 10px;
+    }
+
+    .section-description {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+
+    /* =========================
+       GLOBAL GRIDS
+    ========================= */
+
+    .grid,
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .grid-6 {
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .btn {
+        width: 100%;
+        min-height: 50px;
+        padding: 14px 22px;
+        font-size: 14px;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+
+        min-height: auto;
+
+        padding:
+            120px 0
+            70px;
+    }
+
+    .hero-container {
+
+        width: calc(100% - 32px);
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        text-align: center;
+    }
+
+    .hero-content {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .hero-badge {
+
+        padding: 10px 16px;
+
+        font-size: 12px;
+
+        margin-bottom: 20px;
+
+        max-width: 100%;
+    }
+
+    .hero-title {
+
+        font-size: clamp(
+            38px,
+            11vw,
+            54px
+        );
+
+        line-height: 1.05;
+
+        letter-spacing: -1.5px;
+
+        margin-bottom: 20px;
+    }
+
+    .hero-description {
+
+        max-width: 100%;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        margin-bottom: 28px;
+    }
+
+
+    /* Hero buttons */
+
+    .hero-buttons {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-outline {
+
+        width: 100%;
+
+        padding: 15px 22px;
+    }
+
+
+    /* Hero trust */
+
+    .hero-trust {
+
+        justify-content: center;
+
+        gap: 8px;
+
+        margin: 25px 0;
+    }
+
+    .hero-trust span {
+
+        font-size: 11px;
+
+        padding: 8px 11px;
+    }
+
+
+    /* Hero statistics */
+
+    .hero-mini-stats {
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .stat-card {
+
+        min-width: 0;
+
+        padding: 14px 10px;
+    }
+
+    .stat-card strong {
+
+        font-size: 20px;
+    }
+
+    .stat-card span {
+
+        font-size: 11px;
+    }
+
+
+    /* Hero image */
+
+    .hero-image {
+
+        width: 100%;
+
+        max-width: 480px;
+
+        margin: 0 auto;
+    }
+
+    .hero-image-card {
+
+        padding: 12px;
+
+        border-radius: 24px;
+    }
+
+    .hero-image img {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        border-radius: 20px;
+    }
+
+
+    /* Remove oversized floating cards */
+
+    .floating-card {
+
+        display: none;
+    }
+
+    .hero-prev,
+    .hero-next {
+
+        display: none;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        text-align: left;
+    }
+
+    .about-content {
+
+        text-align: left;
+    }
+
+    .about-content .section-header {
+
+        text-align: left !important;
+    }
+
+    .about-content p {
+
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .about-image {
+
+        width: 100%;
+    }
+
+    .about-image img {
+
+        width: 100%;
+
+        transform: none;
+    }
+
+    .about-image::before {
+
+        left: -10px;
+
+        top: 15px;
+
+        width: 90%;
+
+        height: 90%;
+    }
+
+    .about-badge {
+
+        left: 12px;
+
+        bottom: 12px;
+
+        padding: 14px 16px;
+
+        border-radius: 16px;
+    }
+
+    .about-badge strong {
+
+        font-size: 20px;
+    }
+
+    .about-badge span {
+
+        font-size: 11px;
+    }
+
+    .about-mission-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+        margin: 25px 0;
+    }
+
+    .mission-card {
+
+        padding: 22px;
+
+        border-radius: 18px;
+    }
+
+    .mission-icon {
+
+        width: 52px;
+
+        height: 52px;
+
+        font-size: 25px;
+    }
+
+
+    /* =========================
+       WHY CHOOSE
+    ========================= */
+
+    .why-choose-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        margin: 40px 0;
+    }
+
+    .feature-card {
+
+        padding: 26px 22px;
+    }
+
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats-bar {
+
+        grid-template-columns: 1fr 1fr;
+
+        padding: 30px 18px;
+
+        gap: 25px 10px;
+
+        border-radius: 20px;
+    }
+
+    .stat-item h3 {
+
+        font-size: 30px;
+    }
+
+    .stat-item p {
+
+        font-size: 12px;
+    }
+
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
+    .products-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .product-card {
+
+        border-radius: 20px;
+    }
+
+    .product-image {
+
+        height: 230px;
+
+        border-radius: 20px 20px 0 0;
+    }
+
+    .product-content {
+
+        padding: 22px;
+    }
+
+
+    /* =========================
+       MANUFACTURING
+    ========================= */
+
+    .capabilities-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .capability-card {
+
+        padding: 22px 18px;
+    }
+
+    .photo-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .photo-item {
+
+        height: 230px;
+
+        border-radius: 20px;
+    }
+
+    .strengths-box {
+
+        margin-top: 40px;
+
+        padding: 25px 20px;
+
+        border-radius: 20px;
+    }
+
+    .strengths-list {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    /* =========================
+       CLIENTS
+    ========================= */
+
+    .clients-marquee {
+
+        margin-top: 35px;
+
+        padding: 15px 0;
+    }
+
+    .clients-track {
+
+        gap: 14px;
+
+        animation-duration: 28s;
+    }
+
+    .client-logo {
+
+        width: 130px;
+
+        height: 82px;
+
+        padding: 14px;
+
+        border-radius: 16px;
+    }
+
+    .client-logo img {
+
+        max-height: 50px;
+    }
+
+
+    /* Clients page */
+
+    .grid-6,
+    .clients-grid-page {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 14px;
+    }
+
+
+    /* =========================
+       TESTIMONIALS
+    ========================= */
+
+    .testimonials-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .testimonial-card {
+
+        padding: 22px;
+
+        border-radius: 20px;
+    }
+
+    .testimonial-quote {
+
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .gallery-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .gallery-item {
+
+        height: 230px;
+
+        border-radius: 20px;
+    }
+
+    .gallery-overlay {
+
+        transform: none;
+
+        padding: 15px;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .contact-form {
+
+        padding: 24px 18px;
+
+        border-radius: 18px;
+    }
+
+    .contact-info-item {
+
+        padding: 20px;
+
+        gap: 14px;
+    }
+
+    .form-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .contact-form button {
+
+        width: 100%;
+    }
+
+
+    /* =========================
+       PRODUCT DETAIL
+    ========================= */
+
+    .product-detail {
+
+        padding-top: 50px;
+    }
+
+    .product-detail-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .product-detail-image {
+
+        border-radius: 22px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+
+        padding-top: 60px;
+    }
+
+    .footer-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding-bottom: 40px;
+
+        text-align: center;
+    }
+
+    .footer-brand .logo {
+
+        justify-content: center;
+
+        display: flex;
+    }
+
+    .footer-brand p {
+
+        max-width: 400px;
+
+        margin: auto;
+    }
+
+    .footer-bottom-inner {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    /* =========================
+       FLOATING ACTIONS
+    ========================= */
+
+    .floating-actions {
+
+        right: 12px;
+
+        bottom: 12px;
+
+        gap: 8px;
+    }
+
+    .floating-quote {
+
+        padding: 10px 14px;
+
+        font-size: 12px;
+    }
+
+    .floating-whatsapp {
+
+        width: 48px;
+
+        height: 48px;
+    }
+
+    .floating-whatsapp img {
+
+        width: 25px;
+
+        height: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
 
 @media (max-width: 480px) {
 
-    .container {
-        width: 94%;
+    :root {
+        --section-padding: 60px;
     }
 
-    section {
-        padding: calc(var(--section-padding) * 0.45) 0;
+    .container {
+
+        width: calc(100% - 24px);
     }
+
+
+    /* Navbar */
+
+    .nav-container {
+
+        gap: 10px;
+    }
+
+    .logo img {
+
+        height: 44px;
+    }
+
+    .navbar.scrolled .logo img {
+
+        height: 40px;
+    }
+
+    .hamburger {
+
+        width: 40px;
+
+        height: 40px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+
+        padding-top: 105px;
+
+        padding-bottom: 55px;
+    }
+
+    .hero-title {
+
+        font-size: 36px;
+
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+
+        font-size: 14px;
+    }
+
+    .hero-trust span {
+
+        font-size: 10px;
+
+        padding: 7px 9px;
+    }
+
+    .hero-mini-stats {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* Section titles */
+
+    .section-title {
+
+        font-size: 30px;
+    }
+
+
+    /* About */
+
+    .about-badge {
+
+        left: 8px;
+
+        bottom: 8px;
+
+        padding: 12px 14px;
+    }
+
+    .about-badge strong {
+
+        font-size: 18px;
+    }
+
+
+    /* Cards */
+
+    .card,
+    .feature-card,
+    .testimonial-card {
+
+        padding: 20px;
+    }
+
+
+    /* Stats */
+
+    .stats-bar {
+
+        padding: 25px 12px;
+
+        gap: 20px 5px;
+    }
+
+    .stat-item h3 {
+
+        font-size: 26px;
+    }
+
+
+    /* Clients */
+
+    .client-logo {
+
+        width: 120px;
+
+        height: 76px;
+    }
+
+
+    /* Gallery */
+
+    .gallery-item {
+
+        height: 210px;
+    }
+
+
+    /* Footer */
+
+    .footer-container {
+
+        gap: 28px;
+    }
+
 }
