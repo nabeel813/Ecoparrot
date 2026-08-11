@@ -55,11 +55,11 @@ will-change:transform;
 0 20px 50px rgba(0,0,0,.20);
 }
 
-.navbar.nav-hidden{
+/* .navbar.nav-hidden{
 
     transform:translateY(-110%);
 
-}
+} */
 /* ==========================================
    CONTAINER
 ========================================== */
