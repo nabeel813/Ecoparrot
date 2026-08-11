@@ -277,28 +277,6 @@
     color:var(--primary);
     text-align:center;
 }
-@media (max-width:992px){
-
-    .grid-6,
-    .clients-grid-page{
-
-        grid-template-columns:repeat(3,1fr);
-
-    }
-
-}
-
-@media (max-width:576px){
-
-    .grid-6,
-    .clients-grid-page{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-}
-
 @media (max-width:768px){
 
     .client-logo{

@@ -93,33 +93,3 @@
     max-width:800px;
     margin:auto;
 }
-
-/* ==========================================
-   RESPONSIVE
-   (contact-grid and form-row had no mobile
-   breakpoint at all, forcing 2 columns onto
-   phone-width screens)
-========================================== */
-
-@media (max-width:768px){
-
-    .contact-grid{
-        grid-template-columns:1fr;
-        gap:30px;
-    }
-
-    .contact-form{
-        padding:26px;
-    }
-}
-
-@media (max-width:576px){
-
-    .form-row{
-        grid-template-columns:1fr;
-    }
-
-    .contact-info-item{
-        padding:18px;
-    }
-}
