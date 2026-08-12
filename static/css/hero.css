@@ -652,88 +652,93 @@
 
     /* Content */
 
-    .hero-content {
-        width: 100%;
-        max-width: 520px;
+.hero-content{
+    width:100%;
+    max-width:560px;
 
-        display: flex;
-        flex-direction: column;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
 
-        align-items: center;
+    position:relative;
+    z-index:5;
 
-        text-align: center;
-    }
+    padding:38px 42px;
 
+    border-radius:28px;
+
+    background:rgba(0,0,0,.22);
+
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.18);
+}
 
     /* Badge */
 
-    .hero-badge {
-        margin-bottom: 20px;
+   .hero-badge{
 
-        padding: 9px 16px;
+    color:#fff;
 
-        background: rgba(255,255,255,.88);
+    background:rgba(255,255,255,.12);
 
-        border: 1px solid rgba(20,83,45,.12);
+    border:1px solid rgba(255,255,255,.18);
 
-        color: #14532D;
+    backdrop-filter:blur(10px);
 
-        font-size: 12px;
-
-        font-weight: 800;
-
-        box-shadow: 0 8px 25px rgba(0,0,0,.08);
-    }
+    -webkit-backdrop-filter:blur(10px);
+}
 
 
     /* Heading */
 
-    .hero-title {
-        max-width: 520px;
+.hero-title{
+    max-width:520px;
 
-        font-size: clamp(
-            2.5rem,
-            10vw,
-            3.5rem
-        );
+    font-size:clamp(2.5rem,10vw,3.5rem);
 
-        line-height: 1.02;
+    line-height:1.05;
 
-        letter-spacing: -1.5px;
+    letter-spacing:-1.5px;
 
-        color: #081A10;
+    color:#fff;
 
-        font-weight: 900;
+    font-weight:900;
 
-        margin-bottom: 18px;
-    }
+    margin-bottom:18px;
 
+    text-shadow:
+        0 6px 24px rgba(0,0,0,.45);
+}
 
-    .hero-title span {
-        color: #14532D;
-
-        font-weight: 900;
-
-        margin-top: 6px;
-    }
+.hero-title span{
+    color:#D8F06C;
+}
 
 
     /* Description */
 
-    .hero-description {
-        max-width: 470px;
+.hero-description{
+    max-width:470px;
 
-        font-size: 15px;
+    font-size:16px;
 
-        line-height: 1.65;
+    line-height:1.8;
 
-        color: #25352C;
+    color:rgba(255,255,255,.96);
 
-        font-weight: 600;
+    font-weight:500;
 
-        margin-bottom: 24px;
-    }
+    margin-bottom:24px;
 
+    text-shadow:
+        0 3px 12px rgba(0,0,0,.45);
+}
 
     /* Trust badges */
 
@@ -746,21 +751,12 @@
     }
 
 
-    .hero-trust span {
-        padding: 8px 12px;
+   .hero-trust span{
 
-        background: rgba(255,255,255,.88);
+    color:#fff;
 
-        border: 1px solid rgba(20,83,45,.12);
-
-        color: #173522;
-
-        font-size: 11px;
-
-        font-weight: 700;
-
-        box-shadow: 0 6px 20px rgba(0,0,0,.06);
-    }
+    text-shadow:0 2px 10px rgba(0,0,0,.35);
+}
 
 
     /* Buttons */
