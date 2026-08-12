@@ -236,17 +236,15 @@
 
 }
 .hero-container{
-    position: relative;
-    z-index: 2;
 
-    width: min(1400px, 92%);
-    margin: 0 auto;
+    display:grid;
 
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(420px, 0.85fr);
+    grid-template-columns:1.1fr .9fr;
 
-    align-items: center;
-    gap: clamp(60px, 8vw, 120px);
+    align-items:center;
+
+    gap:80px;
+
 }
 .hero-badge{
     display:inline-flex;
@@ -653,109 +651,139 @@
     /* Content */
 
 .hero-content{
+    position:relative;
+    z-index:10;
+
     width:100%;
-    max-width:560px;
+    max-width:620px;
 
     display:flex;
     flex-direction:column;
-    align-items:center;
-    text-align:center;
+    align-items:flex-start;
 
-    position:relative;
-    z-index:5;
+    text-align:left;
 
-    padding:38px 42px;
+    padding:55px;
 
-    border-radius:28px;
+    border-radius:32px;
 
-    background:rgba(0,0,0,.22);
+    background:rgba(20,20,20,.32);
 
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
 
-    border:1px solid rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.12);
 
     box-shadow:
-        0 20px 50px rgba(0,0,0,.18);
+        0 30px 80px rgba(0,0,0,.25);
 }
-
     /* Badge */
 
    .hero-badge{
 
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:12px 24px;
+
+    border-radius:100px;
+
     color:#fff;
 
-    background:rgba(255,255,255,.12);
+    background:rgba(255,255,255,.08);
 
-    border:1px solid rgba(255,255,255,.18);
+    border:1px solid rgba(197,230,101,.45);
 
-    backdrop-filter:blur(10px);
+    margin-bottom:28px;
 
-    -webkit-backdrop-filter:blur(10px);
+    font-weight:600;
 }
-
 
     /* Heading */
 
 .hero-title{
-    max-width:520px;
 
-    font-size:clamp(2.5rem,10vw,3.5rem);
+    max-width:560px;
 
-    line-height:1.05;
+    font-size:clamp(3.2rem,6vw,5.5rem);
 
-    letter-spacing:-1.5px;
+    line-height:1.02;
+
+    letter-spacing:-2px;
 
     color:#fff;
 
     font-weight:900;
 
-    margin-bottom:18px;
+    margin-bottom:25px;
 
     text-shadow:
-        0 6px 24px rgba(0,0,0,.45);
+        0 8px 30px rgba(0,0,0,.45);
+
 }
 
 .hero-title span{
-    color:#D8F06C;
+
+    color:#B8E94A;
+
 }
 
 
     /* Description */
 
 .hero-description{
-    max-width:470px;
 
-    font-size:16px;
+    max-width:520px;
+
+    color:rgba(255,255,255,.92);
+
+    font-size:18px;
 
     line-height:1.8;
 
-    color:rgba(255,255,255,.96);
+    font-weight:400;
 
-    font-weight:500;
+    margin-bottom:40px;
 
-    margin-bottom:24px;
-
-    text-shadow:
-        0 3px 12px rgba(0,0,0,.45);
 }
 
     /* Trust badges */
 
-    .hero-trust {
-        justify-content: center;
+.hero-trust{
 
-        gap: 8px;
+    display:flex;
 
-        margin: 10px 0 25px;
-    }
+    flex-wrap:wrap;
 
+    gap:14px;
 
-   .hero-trust span{
+    margin-bottom:40px;
+
+}
+
+.hero-trust span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
 
     color:#fff;
 
-    text-shadow:0 2px 10px rgba(0,0,0,.35);
+    backdrop-filter:blur(10px);
+
+    font-size:15px;
+
 }
 
 
@@ -827,25 +855,41 @@
     }
 
 
-    .stat-card {
-        min-width: 0;
+   .stat-card{
 
-        width: 100%;
+    width:100%;
 
-        padding: 15px;
+    padding:26px 30px;
 
-        background: rgba(255,255,255,.9);
+    margin-bottom:18px;
 
-        border: 1px solid rgba(20,83,45,.10);
+    border-radius:24px;
 
-        color: #10241B;
-    }
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+}
 
 
-    .stat-card strong {
-        color: #14532D;
-    }
+  .stat-card strong{
 
+    font-size:42px;
+
+    color:#fff;
+
+    font-weight:800;
+
+}
+.stat-card span{
+
+    color:rgba(255,255,255,.75);
+
+    font-size:17px;
+
+}
 
     /* Navigation arrows */
 
@@ -962,9 +1006,12 @@
     text-shadow: none;
 }
 
-.stat-card span {
-    color: #1E1E1E;
-    text-shadow: none;
+.stat-card span{
+
+    color:rgba(255,255,255,.75);
+
+    font-size:17px;
+
 }
 
 /* Floating cards on right image */
